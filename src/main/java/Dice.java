@@ -1,8 +1,11 @@
 public class Dice {
-    public Dice(int i) {
+    private final int FACES;
+
+    public Dice(int faces) {
+        FACES = faces;
     }
 
     public int getNumberFaces() {
-        return 6;
+        return FACES;
     }
 }
