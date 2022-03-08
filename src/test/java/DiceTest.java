@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DiceTest {
     @Test
-    public void InstantiationTest(){
+    public void InstantiationSixFacesTest(){
         Dice dice = new Dice(6);
 
         assertEquals(6, dice.getNumberFaces());

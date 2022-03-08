@@ -3,6 +3,6 @@ public class Dice {
     }
 
     public int getNumberFaces() {
-        return 0;
+        return 6;
     }
 }
