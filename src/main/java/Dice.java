@@ -1,4 +1,5 @@
 interface Dice {
     public int getFaces();
-    public int roll();
+    public Dice roll();
+    public int getValue();
 }

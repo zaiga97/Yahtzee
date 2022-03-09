@@ -1,6 +1,8 @@
 import java.util.Random;
 
 public class FairDice implements Dice {
+
+    private int value;
     private final int FACES;
     Random random = new Random();
 
@@ -13,7 +15,13 @@ public class FairDice implements Dice {
         return FACES;
     }
 
-    public int roll() {
-        return random.nextInt(1, FACES + 1);
+    public Dice roll() {
+        this.value =  random.nextInt(1, FACES + 1);
+        return this;
+    }
+
+    @Override
+    public int getValue() {
+        return value;
     }
 }

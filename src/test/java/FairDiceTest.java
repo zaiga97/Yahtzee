@@ -24,7 +24,7 @@ public class FairDiceTest {
     @RepeatedTest(100)
     public void RollTest(){
         Dice dice = new FairDice(6);
-        int result = dice.roll();
+        int result = dice.roll().getValue();
         assertTrue(1 <= result && result <= 6);
     }
 
