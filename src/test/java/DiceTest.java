@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class DiceTest {
     @Test
@@ -19,6 +20,8 @@ public class DiceTest {
 
     @Test()
     public void InstantiationNegativeFacesTest(){
-        Dice dice = new Dice(-1);
+        assertThrows(ExceptionInInitializerError.class, () -> {
+            Dice dice = new Dice(-1);
+        });
     }
 }
