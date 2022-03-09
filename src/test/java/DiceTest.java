@@ -1,24 +1,22 @@
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class DiceTest {
-    @Test
-    public void InstantiationSixFacesTest(){
-        Dice dice = new Dice(6);
 
-        assertEquals(6, dice.getFaces());
+    @ParameterizedTest
+    @ValueSource(ints = {1, 25, 6, 100})
+    public void InstantiationPositiveFacesTest(int faces){
+        Dice dice = new Dice(faces);
+
+        assertEquals(faces, dice.getFaces());
     }
 
-    @Test
-    public void InstantiationFiveFacesTest(){
-        Dice dice = new Dice(5);
-
-        assertEquals(5, dice.getFaces());
-    }
-
-    @Test()
+    @ParameterizedTest
+    @ValueSource(ints = {0, -1, -34, -2})
     public void InstantiationNegativeFacesTest(){
         assertThrows(ExceptionInInitializerError.class, () -> {
             Dice dice = new Dice(-1);

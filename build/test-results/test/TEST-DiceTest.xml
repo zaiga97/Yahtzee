@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="DiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-03-09T10:05:12" hostname="Yoga7" time="0.025">
+<testsuite name="DiceTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2022-03-09T10:12:26" hostname="Yoga7" time="0.059">
   <properties/>
-  <testcase name="InstantiationSixFacesTest()" classname="DiceTest" time="0.018"/>
-  <testcase name="InstantiationFiveFacesTest()" classname="DiceTest" time="0.001"/>
-  <testcase name="InstantiationNegativeFacesTest()" classname="DiceTest" time="0.002"/>
+  <testcase name="[1] 1" classname="DiceTest" time="0.034"/>
+  <testcase name="[2] 25" classname="DiceTest" time="0.001"/>
+  <testcase name="[3] 6" classname="DiceTest" time="0.001"/>
+  <testcase name="[4] 100" classname="DiceTest" time="0.001"/>
+  <testcase name="[1] " classname="DiceTest" time="0.002"/>
+  <testcase name="[2] " classname="DiceTest" time="0.001"/>
+  <testcase name="[3] " classname="DiceTest" time="0.001"/>
+  <testcase name="[4] " classname="DiceTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
