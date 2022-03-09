@@ -9,4 +9,8 @@ public class Dice {
     public int getFaces() {
         return FACES;
     }
+
+    public int roll() {
+        return 1000;
+    }
 }
