@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.RepeatedTest;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -27,5 +28,4 @@ public class FairDiceTest {
         int result = dice.roll().getValue();
         assertTrue(1 <= result && result <= 6);
     }
-
 }

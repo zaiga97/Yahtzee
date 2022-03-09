@@ -2,7 +2,9 @@ import java.util.Random;
 
 public class FairDice implements Dice {
 
-    private int value;
+    static final int MIN_VALUE = 1;
+    private int value = MIN_VALUE;
+
     private final int FACES;
     Random random = new Random();
 
@@ -11,17 +13,19 @@ public class FairDice implements Dice {
         FACES = faces;
     }
 
+    @Override
     public int getFaces() {
         return FACES;
     }
 
+    @Override
     public Dice roll() {
-        this.value =  random.nextInt(1, FACES + 1);
+        this.value =  random.nextInt(MIN_VALUE, FACES + 1);
         return this;
     }
 
     @Override
     public int getValue() {
-        return value;
+         return value;
     }
 }
