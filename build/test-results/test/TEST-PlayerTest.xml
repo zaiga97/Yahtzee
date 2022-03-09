@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="PlayerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-03-09T16:07:59" hostname="Yoga7" time="0.044">
+  <properties/>
+  <testcase name="[1] Andrea" classname="PlayerTest" time="0.036"/>
+  <testcase name="[2] Player1" classname="PlayerTest" time="0.001"/>
+  <testcase name="[3] qwerty" classname="PlayerTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
