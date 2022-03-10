@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.function.Function;
 
 public class SumCategory implements ScoreCategory {
@@ -10,6 +11,6 @@ public class SumCategory implements ScoreCategory {
 
     @Override
     public int calculateScore(int[] dicesValues) {
-        return 0;
+        return Arrays.stream(dicesValues).sum();
     }
 }
