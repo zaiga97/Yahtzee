@@ -10,7 +10,7 @@ public class ScoreCategoryTest {
 
     @Test
     public void SumCategoryFunctionTest(){
-        int[] diceValues = new int[] {1,2,3,4,5}
+        int[] diceValues = new int[] {1,2,3,4,5};
         ScoreCategory sumCategory = new SumCategory();
         assertEquals(15, sumCategory.calculateScore(diceValues));
 

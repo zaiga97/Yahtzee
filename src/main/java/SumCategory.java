@@ -22,6 +22,6 @@ public class SumCategory implements ScoreCategory {
 
     @Override
     public int getScore() {
-        return 0;
+        return score;
     }
 }
