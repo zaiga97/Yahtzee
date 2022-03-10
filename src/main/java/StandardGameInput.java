@@ -8,4 +8,23 @@ public class StandardGameInput implements GameInput {
         int menuInput = sc.nextInt();
         return menuInput;
     }
+
+    @Override
+    public String getPlayerName() {
+        return sc.next();
+    }
+
+    @Override
+    public int[] getRerollIndexes() {
+        String inputString = sc.next();
+        inputString = sc.next();
+        String[] indexesAsString = inputString.trim().split(" ");
+
+        int[] indexes = new int[indexesAsString.length];
+        for (int i = 0; i < indexesAsString.length; i++) {
+            indexes[i] = Integer.parseInt(indexesAsString[i]);
+        }
+
+        return indexes;
+    }
 }

@@ -23,4 +23,23 @@ public class StandardGameView implements GameView {
     public void drawNewGame() {
         System.out.println("Welcome to a new game");
     }
+
+    @Override
+    public void drawPlayerNameRequest() {
+        System.out.println("Enter your name:");
+    }
+
+    @Override
+    public void drawGameStatus(GameStatus gs) {
+        System.out.println("Player: " + gs.getPlayer().getName());
+
+        for (var dice: gs.getDices()) {
+            System.out.println(dice.getValue());
+        }
+    }
+
+    @Override
+    public void drawRerollRequest() {
+        System.out.println("Enter the indexes of the dices you want to reroll: ");
+    }
 }

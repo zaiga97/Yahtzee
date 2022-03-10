@@ -1,10 +1,9 @@
 public class GameApp {
-    private final GameStatus gs;
+    private GameStatus gs;
     private final GameView gw;
     private final GameInput gi;
 
-    public GameApp(GameStatus gs, GameView gw, GameInput gi){
-        this.gs = gs;
+    public GameApp(GameView gw, GameInput gi){
         this.gw = gw;
         this.gi = gi;
     }
@@ -27,5 +26,25 @@ public class GameApp {
 
     private void newGameStart() {
         gw.drawNewGame();
+
+        gw.drawPlayerNameRequest();
+        String playerName = gi.getPlayerName();
+        gs = new GameStatus(playerName);
+
+        for (int i = 0; i < 2; i++) {
+            gs.rollAll();
+            gw.drawGameStatus(gs);
+
+            gw.drawRerollRequest();
+            gs.reroll(gi.getRerollIndexes());
+            gw.drawGameStatus(gs);
+
+            gw.drawRerollRequest();
+            gs.reroll(gi.getRerollIndexes());
+            gw.drawGameStatus(gs);
+        }
+
+
     }
+
 }
