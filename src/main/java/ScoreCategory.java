@@ -5,4 +5,7 @@ import java.util.function.Function;
 public interface ScoreCategory {
     String getName();
     int calculateScore(int[] dicesValues);
+    void score(int[] dicesValues);
+
+    int getScore();
 }
