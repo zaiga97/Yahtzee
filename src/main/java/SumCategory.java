@@ -3,7 +3,8 @@ import java.util.function.Function;
 
 public class SumCategory implements ScoreCategory {
     private String name = "Sum";
-    private int score;
+    private int score = 0;
+    private boolean scored = false;
 
     @Override
     public String getName() {
@@ -18,10 +19,16 @@ public class SumCategory implements ScoreCategory {
     @Override
     public void score(int[] dicesValues) {
         score = calculateScore(dicesValues);
+        scored = true;
     }
 
     @Override
     public int getScore() {
         return score;
+    }
+
+    @Override
+    public boolean isScored() {
+        return scored;
     }
 }

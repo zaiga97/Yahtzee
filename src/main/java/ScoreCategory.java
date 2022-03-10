@@ -6,6 +6,6 @@ public interface ScoreCategory {
     String getName();
     int calculateScore(int[] dicesValues);
     void score(int[] dicesValues);
-
     int getScore();
+    boolean isScored();
 }

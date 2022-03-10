@@ -14,8 +14,10 @@ public class ScoreCategoryTest {
         ScoreCategory sumCategory = new SumCategory();
         assertEquals(15, sumCategory.calculateScore(diceValues));
 
+        assertEquals(false, sumCategory.isScored());
         sumCategory.score(diceValues);
         assertEquals(15, sumCategory.getScore());
+        assertEquals(true, sumCategory.isScored());
     }
 
 
