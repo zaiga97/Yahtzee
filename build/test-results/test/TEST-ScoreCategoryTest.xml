@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ScoreCategoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-11T14:30:28" hostname="Yoga7" time="0.026">
+<testsuite name="ScoreCategoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-11T15:04:43" hostname="Yoga7" time="0.021">
   <properties/>
-  <testcase name="SumOf4CategoryTest()" classname="ScoreCategoryTest" time="0.026"/>
+  <testcase name="generalCategoryTest()" classname="ScoreCategoryTest" time="0.021"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

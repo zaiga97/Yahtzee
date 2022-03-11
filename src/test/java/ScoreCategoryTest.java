@@ -1,9 +1,12 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import scoring.category.GeneralCategory;
 import scoring.category.ScoreCategory;
 import scoring.category.SumCategory;
 import scoring.category.SumOfXCategory;
+
+import java.util.Arrays;
 
 
 public class ScoreCategoryTest {
@@ -40,6 +43,20 @@ public class ScoreCategoryTest {
         sumOf4Category.score(diceValues);
         assertEquals(4*3, sumOf4Category.getScore());
         assertEquals(true, sumOf4Category.isScored());
+    }
+
+    @Test
+    public void generalCategoryTest(){
+        int[] diceValues = new int[] {1,2,3,4,5};
+        ScoreCategory generalCategory = new GeneralCategory(
+                "GeneralTest",
+                ints -> Arrays.stream(ints).sum()
+        );
+        assertEquals(15, generalCategory.calculateScore(diceValues));
+        assertEquals(false, generalCategory.isScored());
+        generalCategory.score(diceValues);
+        assertEquals(15, generalCategory.getScore());
+        assertEquals(true, generalCategory.isScored());
     }
 
 
