@@ -19,7 +19,4 @@ public class ScoreCategoryTest {
         assertEquals(15, sumCategory.getScore());
         assertEquals(true, sumCategory.isScored());
     }
-
-
-
 }
