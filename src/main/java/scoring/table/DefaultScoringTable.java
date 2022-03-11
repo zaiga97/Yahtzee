@@ -47,7 +47,7 @@ public class DefaultScoringTable implements ScoringTable {
     //7: Bonus
 
     //8: Couple
-    static Function<int[], Integer> COUPLE = ints -> {
+    private final static Function<int[], Integer> COUPLE = ints -> {
         List<Integer> listOfInts = Arrays.stream(ints).boxed().toList();
 
         if(listOfInts.stream()
@@ -64,7 +64,7 @@ public class DefaultScoringTable implements ScoringTable {
     };
 
     //9: Double couple
-    static Function<int[], Integer> DOUBLECOUPLE = ints -> {
+    private final static Function<int[], Integer> DOUBLECOUPLE = ints -> {
         List<Integer> listOfInts = Arrays.stream(ints).boxed().toList();
 
         if(listOfInts.stream()
@@ -83,14 +83,46 @@ public class DefaultScoringTable implements ScoringTable {
     };
 
     //10: Tris
-    //11: Quad
+    private final static Function<int[], Integer> TRIS = ints -> {
+        List<Integer> listOfInts = Arrays.stream(ints).boxed().toList();
+
+        if(listOfInts.stream()
+                .filter(i -> Collections.frequency(listOfInts, i) >2)
+                .max(Integer::compareTo)
+                .isEmpty()) {return 0;}
+
+        else{
+            return 3 * listOfInts.stream()
+                    .filter(i -> Collections.frequency(listOfInts, i) >2)
+                    .max(Integer::compareTo)
+                    .get();
+        }
+    };
+
+    //11: Poker
+    private final static Function<int[], Integer> POKER = ints -> {
+        List<Integer> listOfInts = Arrays.stream(ints).boxed().toList();
+
+        if(listOfInts.stream()
+                .filter(i -> Collections.frequency(listOfInts, i) >3)
+                .max(Integer::compareTo)
+                .isEmpty()) {return 0;}
+
+        else{
+            return 4 * listOfInts.stream()
+                    .filter(i -> Collections.frequency(listOfInts, i) >3)
+                    .max(Integer::compareTo)
+                    .get();
+        }
+    };
+
     //12: Smale scale
     //13: Big scale
     //14: Full
     //15: Sum
     //16: Yahtzee
 
-    ScoreCategory[] scoringList = new ScoreCategory[10];
+    ScoreCategory[] scoringList = new ScoreCategory[12];
 
     public DefaultScoringTable(){
         //0: # of 1
@@ -116,7 +148,9 @@ public class DefaultScoringTable implements ScoringTable {
         //9: Double couple
         scoringList[9] = new GeneralCategory("Double couple", DOUBLECOUPLE);
         //10: Tris
-        //11: Quad
+        scoringList[10] = new GeneralCategory("Tris", TRIS);
+        //11: Poker
+        scoringList[11] = new GeneralCategory("Poker", POKER);
         //12: Smale scale
         //13: Big scale
         //14: Full

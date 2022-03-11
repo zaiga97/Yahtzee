@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ScoringTableTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-11T18:38:54" hostname="Yoga7" time="0.023">
+<testsuite name="ScoringTableTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-03-11T18:45:12" hostname="Yoga7" time="0.042">
   <properties/>
-  <testcase name="doubleCoupleTest()" classname="ScoringTableTest" time="0.023"/>
+  <testcase name="pokerTest()" classname="ScoringTableTest" time="0.026"/>
+  <testcase name="coupleTest()" classname="ScoringTableTest" time="0.002"/>
+  <testcase name="doubleCoupleTest()" classname="ScoringTableTest" time="0.003"/>
+  <testcase name="trisTest()" classname="ScoringTableTest" time="0.003"/>
+  <testcase name="upperScoreTest()" classname="ScoringTableTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

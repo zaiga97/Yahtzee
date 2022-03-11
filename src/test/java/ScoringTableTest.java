@@ -55,4 +55,36 @@ public class ScoringTableTest {
         scoringTable.score(9, new int[]{1,1,6,6,6});
         assertEquals(14, scoringTable.getScore());
     }
+
+    @Test
+    public void trisTest(){
+        assertEquals(0, scoringTable.getScore());
+        scoringTable.score(10, new int[]{1,1,3,4,5});
+        assertEquals(0, scoringTable.getScore());
+
+        scoringTable.score(10, new int[]{1,1,3,3,3});
+        assertEquals(9, scoringTable.getScore());
+
+        scoringTable.score(10, new int[]{1,5,5,5,5});
+        assertEquals(15, scoringTable.getScore());
+
+        scoringTable.score(10, new int[]{1,1,6,6,6});
+        assertEquals(18, scoringTable.getScore());
+    }
+
+    @Test
+    public void pokerTest(){
+        assertEquals(0, scoringTable.getScore());
+        scoringTable.score(11, new int[]{1,1,3,4,5});
+        assertEquals(0, scoringTable.getScore());
+
+        scoringTable.score(11, new int[]{1,3,3,3,3});
+        assertEquals(12, scoringTable.getScore());
+
+        scoringTable.score(11, new int[]{1,5,5,5,5});
+        assertEquals(20, scoringTable.getScore());
+
+        scoringTable.score(11, new int[]{1,1,6,6,6});
+        assertEquals(0, scoringTable.getScore());
+    }
 }
