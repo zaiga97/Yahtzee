@@ -1,3 +1,6 @@
+import IOinterface.*;
+import gameLogic.*;
+
 public class Main {
     public static void main(String[] args) {
         GameView gw = new StandardGameView();

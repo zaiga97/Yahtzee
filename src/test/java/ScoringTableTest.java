@@ -1,4 +1,7 @@
 import org.junit.jupiter.api.Test;
+import scoring.table.DefaultScoringTable;
+import scoring.table.ScoringTable;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ScoringTableTest {
