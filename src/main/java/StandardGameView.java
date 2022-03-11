@@ -1,7 +1,4 @@
 public class StandardGameView implements GameView {
-    @Override
-    public void draw(GameStatus gs) {
-    }
 
     @Override
     public void drawMenu() {
@@ -31,11 +28,21 @@ public class StandardGameView implements GameView {
 
     @Override
     public void drawGameStatus(GameStatus gs) {
-        System.out.println("Player: " + gs.getPlayer().getName());
+        System.out.println(
+                "##############################\n" +
+                "-> Player: " + gs.getPlayer().getName() + "\n\n"
+        );
 
-        for (var dice: gs.getDices()) {
-            System.out.println(dice.getValue());
-        }
+        drawScoringTable(gs.getScoringTable());
+        drawDices(gs.getDices());
+
+        System.out.println(
+                "##############################\n"
+        );
+    }
+
+    private void drawDices(Dice[] dices) {
+        for (var dice: dices) System.out.println(dice.getValue());
     }
 
     @Override
@@ -46,5 +53,9 @@ public class StandardGameView implements GameView {
     @Override
     public void drawScoringRequest() {
         System.out.println("Please enter the category index you want to score:");
+    }
+
+    public void drawScoringTable(ScoringTable scoringTable){
+
     }
 }

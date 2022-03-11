@@ -46,10 +46,7 @@ public class GameApp {
             gw.drawScoringRequest();
             int scoringIndex = gi.getScoringIndex();
             gs.score(scoringIndex);
-            System.out.println(gs.getScore());
+            gw.drawGameStatus(gs);
         }
-
-
     }
-
 }

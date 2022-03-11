@@ -39,4 +39,8 @@ public class GameStatus {
     public int getScore() {
         return scoringTable.getScore();
     }
+
+    public ScoringTable getScoringTable() {
+        return scoringTable;
+    }
 }

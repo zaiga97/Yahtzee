@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class StandardGameInput implements GameInput {
@@ -6,18 +9,20 @@ public class StandardGameInput implements GameInput {
     @Override
     public int getMenuInput() {
         int menuInput = sc.nextInt();
+        sc.nextLine();
         return menuInput;
     }
 
     @Override
     public String getPlayerName() {
-        return sc.next();
+        String name = sc.next();
+        sc.nextLine();
+        return name;
     }
 
     @Override
     public int[] getRerollIndexes() {
-        String inputString = sc.next();
-        inputString = sc.next();
+        String inputString = sc.nextLine();
         String[] indexesAsString = inputString.trim().split(" ");
 
         int[] indexes = new int[indexesAsString.length];
@@ -31,6 +36,7 @@ public class StandardGameInput implements GameInput {
     @Override
     public int getScoringIndex() {
         int scoringIndex = sc.nextInt();
+        sc.nextLine();
         return scoringIndex;
     }
 }
