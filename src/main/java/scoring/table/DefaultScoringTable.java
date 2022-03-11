@@ -4,10 +4,11 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 import scoring.category.GeneralCategory;
 import scoring.category.ScoreCategory;
-import scoring.category.SumCategory;
+import scoring.category.SumOfUpperCategory;
 
 public class DefaultScoringTable implements ScoringTable {
     //This is the scoring list:
@@ -203,7 +204,7 @@ public class DefaultScoringTable implements ScoringTable {
         scoringList[5] = new GeneralCategory("# of 6", SUM6);
 
         //6: Sum of above
-        scoringList[6] = new GeneralCategory("Sum of upper", ints -> 0);
+        scoringList[6] = new SumOfUpperCategory("Sum of upper", this);
         //7: Bonus
         scoringList[7] = new GeneralCategory("Bonus", ints -> 0);
 
@@ -230,6 +231,11 @@ public class DefaultScoringTable implements ScoringTable {
     @Override
     public int getScore() {
         return Arrays.stream(scoringList).mapToInt(ScoreCategory::getScore).sum();
+    }
+
+    @Override
+    public ScoreCategory getScoringCategory(int index) {
+        return scoringList[index];
     }
 
     @Override

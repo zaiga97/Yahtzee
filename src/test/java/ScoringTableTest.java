@@ -11,17 +11,16 @@ public class ScoringTableTest {
     public void upperScoreTest(){
         assertEquals(0, scoringTable.getScore());
         scoringTable.score(0, new int[]{1,2,3,4,5});
-        assertEquals(1, scoringTable.getScore());
+        assertEquals(2*1, scoringTable.getScore());
 
         scoringTable.score(0, new int[]{2,2,2,2,2});
         assertEquals(0, scoringTable.getScore());
 
         scoringTable.score(5, new int[]{6,6,6,6,5});
-        assertEquals(24, scoringTable.getScore());
+        assertEquals(2*24, scoringTable.getScore());
 
         scoringTable.score(1, new int[]{2,2,3,4,5});
-        assertEquals(28, scoringTable.getScore());
-
+        assertEquals(2*28, scoringTable.getScore());
     }
 
     @Test

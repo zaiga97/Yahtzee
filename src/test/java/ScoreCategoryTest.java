@@ -3,8 +3,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import scoring.category.GeneralCategory;
 import scoring.category.ScoreCategory;
-import scoring.category.SumCategory;
-import scoring.category.SumOfXCategory;
 
 import java.util.Arrays;
 import java.util.function.Function;
