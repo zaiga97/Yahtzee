@@ -1,6 +1,8 @@
 package scoring.table;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.function.Function;
 
 import scoring.category.GeneralCategory;
@@ -45,6 +47,21 @@ public class DefaultScoringTable implements ScoringTable {
     //7: Bonus
 
     //8: Couple
+    static Function<int[], Integer> COUPLE = ints -> {
+        List<Integer> listOfInts = Arrays.stream(ints).boxed().toList();
+
+        if(Arrays.stream(ints).boxed()
+                .filter(i -> Collections.frequency(listOfInts, i) >1)
+                .max(Integer::compareTo)
+                .isEmpty()) {return 0;}
+
+        else{
+            return 2 * listOfInts.stream()
+                    .filter(i -> Collections.frequency(listOfInts, i) >1)
+                    .max(Integer::compareTo)
+                    .get();
+        }
+    };
     //9: Double couple
     //10: Tris
     //11: Quad
@@ -54,7 +71,7 @@ public class DefaultScoringTable implements ScoringTable {
     //15: Sum
     //16: Yahtzee
 
-    ScoreCategory[] scoringList = new ScoreCategory[6];
+    ScoreCategory[] scoringList = new ScoreCategory[9];
 
     public DefaultScoringTable(){
         //0: # of 1
@@ -71,9 +88,12 @@ public class DefaultScoringTable implements ScoringTable {
         scoringList[5] = new GeneralCategory("# of 6", SUM6);
 
         //6: Sum of above
+        scoringList[6] = new GeneralCategory("Sum of upper", ints -> 0);
         //7: Bonus
+        scoringList[7] = new GeneralCategory("Bonus", ints -> 0);
 
         //8: Couple
+        scoringList[8] = new GeneralCategory("Couple", COUPLE);
         //9: Double couple
         //10: Tris
         //11: Quad
