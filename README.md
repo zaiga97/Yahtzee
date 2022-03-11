@@ -13,6 +13,10 @@ For implementing the game I will use a TDD aproach and gradle for build automati
 Here is a list of features I aim to implement:
 
 - [ ] Working game using the console for I/O.
+- -[ ] Make the original ScoringTable for the game.
+- -[ ] Refactor StandardWiew so it is useful.
+- -[ ] Fix input with error handling.
+- -[ ] Create the end of the game.
 - [ ] Add highscores.
 - [ ] Add local multiplayer.
 - [ ] Add a graphic interface.

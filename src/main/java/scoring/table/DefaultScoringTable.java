@@ -2,6 +2,7 @@ package scoring.table;
 
 import java.util.Arrays;
 import scoring.category.ScoreCategory;
+import scoring.category.SumCategory;
 
 public class DefaultScoringTable implements ScoringTable {
     ScoreCategory[] scoringList = new ScoreCategory[3];

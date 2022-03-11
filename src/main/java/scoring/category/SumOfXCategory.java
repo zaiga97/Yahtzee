@@ -1,13 +1,17 @@
 package scoring.category;
 
-import scoring.category.ScoreCategory;
-
 import java.util.Arrays;
 
-public class SumCategory implements ScoreCategory {
-    private String name = "Sum";
+public class SumOfXCategory implements ScoreCategory {
+    private String name;
+    private final int X;
     private int score = 0;
     private boolean scored = false;
+
+    public SumOfXCategory(int x) {
+        X = x;
+        name = "# " + X;
+    }
 
     @Override
     public String getName() {
@@ -16,7 +20,7 @@ public class SumCategory implements ScoreCategory {
 
     @Override
     public int calculateScore(int[] dicesValues) {
-        return Arrays.stream(dicesValues).sum();
+        return Arrays.stream(dicesValues).filter(i -> i == X).sum();
     }
 
     @Override
