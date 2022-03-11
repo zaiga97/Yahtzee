@@ -19,8 +19,14 @@ public class ScoringTableTest {
         scoringTable.score(5, new int[]{6,6,6,6,5});
         assertEquals(24, scoringTable.getTotalScore());
 
-        scoringTable.score(1, new int[]{2,2,3,4,5});
-        assertEquals(28, scoringTable.getTotalScore());
+        scoringTable.score(1, new int[]{2,2,2,4,5});
+        assertEquals(30, scoringTable.getTotalScore());
+
+        scoringTable.score(4, new int[]{5,5,5,5,5});
+        assertEquals(55, scoringTable.getTotalScore());
+
+        scoringTable.score(3, new int[]{4,4,4,5,5});
+        assertEquals(67 + 50, scoringTable.getTotalScore()); //We activated the bonus
     }
 
     @Test
