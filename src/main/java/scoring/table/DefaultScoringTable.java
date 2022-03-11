@@ -50,7 +50,7 @@ public class DefaultScoringTable implements ScoringTable {
     static Function<int[], Integer> COUPLE = ints -> {
         List<Integer> listOfInts = Arrays.stream(ints).boxed().toList();
 
-        if(Arrays.stream(ints).boxed()
+        if(listOfInts.stream()
                 .filter(i -> Collections.frequency(listOfInts, i) >1)
                 .max(Integer::compareTo)
                 .isEmpty()) {return 0;}
@@ -62,7 +62,26 @@ public class DefaultScoringTable implements ScoringTable {
                     .get();
         }
     };
+
     //9: Double couple
+    static Function<int[], Integer> DOUBLECOUPLE = ints -> {
+        List<Integer> listOfInts = Arrays.stream(ints).boxed().toList();
+
+        if(listOfInts.stream()
+                .filter(i -> Collections.frequency(listOfInts, i) >1)
+                .distinct()
+                .count() < 2
+        ) {return 0;}
+
+        else{
+            return 2 * listOfInts.stream()
+                    .filter(i -> Collections.frequency(listOfInts, i) > 1)
+                    .distinct() //NB there are only 2
+                    .mapToInt(i -> i)
+                    .sum();
+        }
+    };
+
     //10: Tris
     //11: Quad
     //12: Smale scale
@@ -71,7 +90,7 @@ public class DefaultScoringTable implements ScoringTable {
     //15: Sum
     //16: Yahtzee
 
-    ScoreCategory[] scoringList = new ScoreCategory[9];
+    ScoreCategory[] scoringList = new ScoreCategory[10];
 
     public DefaultScoringTable(){
         //0: # of 1
@@ -95,6 +114,7 @@ public class DefaultScoringTable implements ScoringTable {
         //8: Couple
         scoringList[8] = new GeneralCategory("Couple", COUPLE);
         //9: Double couple
+        scoringList[9] = new GeneralCategory("Double couple", DOUBLECOUPLE);
         //10: Tris
         //11: Quad
         //12: Smale scale

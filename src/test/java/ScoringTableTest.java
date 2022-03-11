@@ -25,7 +25,7 @@ public class ScoringTableTest {
     }
 
     @Test
-    public void CoupleTest(){
+    public void coupleTest(){
         assertEquals(0, scoringTable.getScore());
         scoringTable.score(8, new int[]{1,2,3,4,5});
         assertEquals(0, scoringTable.getScore());
@@ -38,5 +38,21 @@ public class ScoringTableTest {
 
         scoringTable.score(8, new int[]{1,1,6,6,6});
         assertEquals(12, scoringTable.getScore());
+    }
+
+    @Test
+    public void doubleCoupleTest(){
+        assertEquals(0, scoringTable.getScore());
+        scoringTable.score(9, new int[]{1,1,3,4,5});
+        assertEquals(0, scoringTable.getScore());
+
+        scoringTable.score(9, new int[]{1,1,3,3,5});
+        assertEquals(8, scoringTable.getScore());
+
+        scoringTable.score(9, new int[]{1,1,3,5,5});
+        assertEquals(12, scoringTable.getScore());
+
+        scoringTable.score(9, new int[]{1,1,6,6,6});
+        assertEquals(14, scoringTable.getScore());
     }
 }
