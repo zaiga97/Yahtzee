@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class DefaultScoringTable implements ScoringTable {
     ScoreCategory[] scoringList = new ScoreCategory[3];
 
@@ -9,7 +11,7 @@ public class DefaultScoringTable implements ScoringTable {
 
     @Override
     public int getScore() {
-        return 0;
+        return Arrays.stream(scoringList).mapToInt(scoreCategory -> scoreCategory.getScore()).sum();
     }
 
     @Override
