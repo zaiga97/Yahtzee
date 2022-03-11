@@ -116,13 +116,77 @@ public class DefaultScoringTable implements ScoringTable {
         }
     };
 
-    //12: Smale scale
-    //13: Big scale
-    //14: Full
-    //15: Sum
-    //16: Yahtzee
+    //12: Small scale
+    private final static Function<int[], Integer> SMALL = ints -> {
+        List<Integer> listOfInts = Arrays.stream(ints).boxed().toList();
 
-    ScoreCategory[] scoringList = new ScoreCategory[12];
+        if(!listOfInts.containsAll(List.of(1,2,3,4,5))) {return 0;}
+        return 15;
+    };
+
+    //13: Big scale
+    private final static Function<int[], Integer> BIG = ints -> {
+        List<Integer> listOfInts = Arrays.stream(ints).boxed().toList();
+
+        if(!listOfInts.containsAll(List.of(2,3,4,5,6))) {return 0;}
+        return 20;
+    };
+
+    //14: Full
+    private final static Function<int[], Integer> FULL = ints -> {
+        List<Integer> listOfInts = Arrays.stream(ints).boxed().toList();
+        int tris, duo;
+
+        if(listOfInts.stream()
+                .filter(i -> Collections.frequency(listOfInts, i) >2)
+                .toList()
+                .isEmpty()
+        ) {return 0;}
+        else{
+            tris = listOfInts.stream()
+                    .filter(i -> Collections.frequency(listOfInts, i) > 2)
+                    .max(Integer::compareTo)
+                    .get();
+        }
+
+        if(listOfInts.stream()
+                .filter(i -> i != tris)
+                .filter(i -> Collections.frequency(listOfInts, i) >1)
+                .toList()
+                .isEmpty()
+        ) {return 0;}
+        else{
+            duo = listOfInts.stream()
+                    .filter(i -> i != tris)
+                    .filter(i -> Collections.frequency(listOfInts, i) > 1)
+                    .max(Integer::compareTo)
+                    .get();
+        }
+
+        return (tris*3) + (duo*2);
+    };
+
+    //15: Sum
+    private final static Function<int[], Integer> SUM = ints -> Arrays.stream(ints).sum();
+
+    //16: Yahtzee
+    private final static Function<int[], Integer> YAHTZEE = ints -> {
+        List<Integer> listOfInts = Arrays.stream(ints).boxed().toList();
+
+        if(listOfInts.stream()
+                .filter(i -> Collections.frequency(listOfInts, i) >4)
+                .max(Integer::compareTo)
+                .isEmpty()) {return 0;}
+
+        else{
+            return 50 + 5 * listOfInts.stream()
+                    .filter(i -> Collections.frequency(listOfInts, i) >4)
+                    .max(Integer::compareTo)
+                    .get();
+        }
+    };
+
+    ScoreCategory[] scoringList = new ScoreCategory[17];
 
     public DefaultScoringTable(){
         //0: # of 1
@@ -151,16 +215,21 @@ public class DefaultScoringTable implements ScoringTable {
         scoringList[10] = new GeneralCategory("Tris", TRIS);
         //11: Poker
         scoringList[11] = new GeneralCategory("Poker", POKER);
-        //12: Smale scale
+        //12: Small scale
+        scoringList[12] = new GeneralCategory("Small scale", SMALL);
         //13: Big scale
+        scoringList[13] = new GeneralCategory("Big scale", BIG);
         //14: Full
+        scoringList[14] = new GeneralCategory("Full", FULL);
         //15: Sum
+        scoringList[15] = new GeneralCategory("Sum", SUM);
         //16: Yahtzee
+        scoringList[16] = new GeneralCategory("Yahtzee", YAHTZEE);
     }
 
     @Override
     public int getScore() {
-        return Arrays.stream(scoringList).mapToInt(scoreCategory -> scoreCategory.getScore()).sum();
+        return Arrays.stream(scoringList).mapToInt(ScoreCategory::getScore).sum();
     }
 
     @Override

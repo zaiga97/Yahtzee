@@ -87,4 +87,80 @@ public class ScoringTableTest {
         scoringTable.score(11, new int[]{1,1,6,6,6});
         assertEquals(0, scoringTable.getScore());
     }
+
+    @Test
+    public void smallScaleTest(){
+        assertEquals(0, scoringTable.getScore());
+        scoringTable.score(12, new int[]{1,1,3,4,5});
+        assertEquals(0, scoringTable.getScore());
+
+        scoringTable.score(12, new int[]{1,2,3,4,5});
+        assertEquals(15, scoringTable.getScore());
+
+        scoringTable.score(12, new int[]{2,3,4,5,6});
+        assertEquals(0, scoringTable.getScore());
+
+        scoringTable.score(12, new int[]{5,3,2,1,4});
+        assertEquals(15, scoringTable.getScore());
+    }
+
+    @Test
+    public void bigScaleTest(){
+        assertEquals(0, scoringTable.getScore());
+        scoringTable.score(13, new int[]{1,1,3,4,5});
+        assertEquals(0, scoringTable.getScore());
+
+        scoringTable.score(13, new int[]{2,3,4,5,6});
+        assertEquals(20, scoringTable.getScore());
+
+        scoringTable.score(13, new int[]{2,3,4,5,1});
+        assertEquals(0, scoringTable.getScore());
+
+        scoringTable.score(13, new int[]{5,3,2,6,4});
+        assertEquals(20, scoringTable.getScore());
+    }
+
+    @Test
+    public void fullTest(){
+        assertEquals(0, scoringTable.getScore());
+        scoringTable.score(14, new int[]{1,1,3,4,5});
+        assertEquals(0, scoringTable.getScore());
+
+        scoringTable.score(14, new int[]{1,2,1,2,2});
+        assertEquals(8, scoringTable.getScore());
+
+        scoringTable.score(14, new int[]{6,6,6,6,6});
+        assertEquals(0, scoringTable.getScore());
+
+        scoringTable.score(14, new int[]{4,4,6,6,4});
+        assertEquals(24, scoringTable.getScore());
+    }
+
+    @Test
+    public void sumTest(){
+        assertEquals(0, scoringTable.getScore());
+        scoringTable.score(15, new int[]{1,1,3,4,5});
+        assertEquals(14, scoringTable.getScore());
+
+        scoringTable.score(15, new int[]{2,3,4,5,6});
+        assertEquals(20, scoringTable.getScore());
+    }
+
+    @Test
+    public void yahtzeeTest(){
+        assertEquals(0, scoringTable.getScore());
+        scoringTable.score(16, new int[]{1,1,3,4,5});
+        assertEquals(0, scoringTable.getScore());
+
+        scoringTable.score(16, new int[]{2,3,4,5,6});
+        assertEquals(0, scoringTable.getScore());
+
+        scoringTable.score(16, new int[]{6,6,6,6,6});
+        assertEquals(80, scoringTable.getScore());
+
+        scoringTable.score(16, new int[]{1,1,1,1,1});
+        assertEquals(55, scoringTable.getScore());
+    }
+
+
 }
