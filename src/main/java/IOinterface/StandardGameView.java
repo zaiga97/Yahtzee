@@ -62,7 +62,7 @@ public class StandardGameView implements GameView {
     }
 
     public void drawScoringTable(ScoringTable scoringTable){
-        System.out.println("gameLogic.Player score:" + scoringTable.getScore());
+        System.out.println("gameLogic.Player score:" + scoringTable.getTotalScore());
         System.out.println("TABLEEEE");
     }
 }

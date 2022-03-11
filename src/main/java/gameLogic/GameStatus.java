@@ -42,7 +42,7 @@ public class GameStatus {
     }
 
     public int getScore() {
-        return scoringTable.getScore();
+        return scoringTable.getTotalScore();
     }
 
     public ScoringTable getScoringTable() {

@@ -229,8 +229,8 @@ public class DefaultScoringTable implements ScoringTable {
     }
 
     @Override
-    public int getScore() {
-        return Arrays.stream(scoringList).mapToInt(ScoreCategory::getScore).sum();
+    public int getTotalScore() {
+        return Arrays.stream(scoringList).mapToInt(ScoreCategory::getScore).sum() - scoringList[6].getScore();
     }
 
     @Override
