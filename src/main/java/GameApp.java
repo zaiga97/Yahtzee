@@ -31,7 +31,7 @@ public class GameApp {
         String playerName = gi.getPlayerName();
         gs = new GameStatus(playerName);
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 3; i++) {
             gs.rollAll();
             gw.drawGameStatus(gs);
 
@@ -42,6 +42,11 @@ public class GameApp {
             gw.drawRerollRequest();
             gs.reroll(gi.getRerollIndexes());
             gw.drawGameStatus(gs);
+
+            gw.drawScoringRequest();
+            int scoringIndex = gi.getScoringIndex();
+            gs.score(scoringIndex);
+            System.out.println(gs.getScore());
         }
 
 

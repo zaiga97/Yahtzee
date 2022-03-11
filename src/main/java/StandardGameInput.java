@@ -27,4 +27,10 @@ public class StandardGameInput implements GameInput {
 
         return indexes;
     }
+
+    @Override
+    public int getScoringIndex() {
+        int scoringIndex = sc.nextInt();
+        return scoringIndex;
+    }
 }

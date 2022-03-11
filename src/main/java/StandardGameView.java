@@ -42,4 +42,9 @@ public class StandardGameView implements GameView {
     public void drawRerollRequest() {
         System.out.println("Enter the indexes of the dices you want to reroll: ");
     }
+
+    @Override
+    public void drawScoringRequest() {
+        System.out.println("Please enter the category index you want to score:");
+    }
 }

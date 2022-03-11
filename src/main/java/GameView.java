@@ -5,6 +5,6 @@ interface GameView {
     public void drawNewGame();
     public void drawPlayerNameRequest();
     public void drawGameStatus(GameStatus gs);
-
-    void drawRerollRequest();
+    public void drawRerollRequest();
+    public void drawScoringRequest();
 }
