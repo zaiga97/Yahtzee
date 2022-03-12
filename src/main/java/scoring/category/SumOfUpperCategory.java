@@ -2,19 +2,12 @@ package scoring.category;
 
 import scoring.table.ScoringTable;
 
-public class SumOfUpperCategory implements ScoreCategory{
-    private final String name;
+public class SumOfUpperCategory extends PartialCategory implements ScoreCategory{
     private final ScoringTable scoringTable;
-    private int score = 0;
 
     public SumOfUpperCategory(String name, ScoringTable scoringTable) {
-        this.name = name;
+        super(name);
         this.scoringTable = scoringTable;
-    }
-
-    @Override
-    public String getName() {
-        return name;
     }
 
     @Override

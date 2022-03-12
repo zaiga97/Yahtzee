@@ -2,19 +2,12 @@ package scoring.category;
 
 import scoring.table.ScoringTable;
 
-public class BonusCategory implements ScoreCategory{
-    private final String name;
+public class BonusCategory extends PartialCategory implements ScoreCategory{
     private final ScoringTable scoringTable;
-    private int score = 0;
 
     public BonusCategory(String name, ScoringTable scoringTable) {
-        this.name = name;
+        super(name);
         this.scoringTable = scoringTable;
-    }
-
-    @Override
-    public String getName() {
-        return name;
     }
 
     @Override
@@ -25,7 +18,7 @@ public class BonusCategory implements ScoreCategory{
 
     @Override
     public void score() {
-        score = calculateScore();
+        super.score = calculateScore();
     }
 
     @Override
