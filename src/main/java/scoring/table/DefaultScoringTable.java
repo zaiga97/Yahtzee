@@ -183,8 +183,9 @@ public class DefaultScoringTable implements ScoringTable {
                     .get();
         }
     };
+    private static final int CATEGORYCOUNT = 17;
 
-    ScoreCategory[] scoringList = new ScoreCategory[17];
+    ScoreCategory[] scoringList = new ScoreCategory[CATEGORYCOUNT];
 
     public DefaultScoringTable(){
         //0: # of 1
@@ -246,5 +247,10 @@ public class DefaultScoringTable implements ScoringTable {
             if (!category.isScored()) return false;
         }
         return true;
+    }
+
+    @Override
+    public int getCategoryCount() {
+        return CATEGORYCOUNT;
     }
 }

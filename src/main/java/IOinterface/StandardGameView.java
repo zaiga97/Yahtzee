@@ -2,6 +2,7 @@ package IOinterface;
 
 import gameLogic.Dice;
 import gameLogic.GameStatus;
+import scoring.category.ScoreCategory;
 import scoring.table.ScoringTable;
 
 public class StandardGameView implements GameView {
@@ -36,19 +37,21 @@ public class StandardGameView implements GameView {
     public void drawGameStatus(GameStatus gs) {
         System.out.println(
                 "##############################\n" +
-                "-> gameLogic.Player: " + gs.getPlayer().getName() + "\n\n"
+                "-> Player: " + gs.getPlayer().getName() + "\n" +
+                "-> Score: " + gs.getScore()
         );
 
         drawScoringTable(gs.getScoringTable());
         drawDices(gs.getDices());
 
-        System.out.println(
-                "##############################\n"
-        );
     }
 
     private void drawDices(Dice[] dices) {
-        for (var dice: dices) System.out.println(dice.getValue());
+        System.out.println("#####        DICES       #####");
+        for (int i = 0; i < dices.length; i++) {
+            System.out.println("| dice: " + i + " | " + dices[i].getValue() + " |");
+        }
+        System.out.println("##############################");
     }
 
     @Override
@@ -67,7 +70,13 @@ public class StandardGameView implements GameView {
     }
 
     public void drawScoringTable(ScoringTable scoringTable){
-        System.out.println("gameLogic.Player score:" + scoringTable.getTotalScore());
-        System.out.println("TABLEEEE");
+        int categoryCount = scoringTable.getCategoryCount();
+        System.out.println("#####   SCORING TABLE    #####");
+        for (int i = 0; i < categoryCount; i++) {
+            ScoreCategory scoreCategory = scoringTable.getScoringCategory(i);
+            //System.out.println("------------------------------"); //30 char
+            System.out.println("| i: " + i + " | " + scoreCategory.getName() + " | " + scoreCategory.getScore() + " |");
+        }
+        System.out.println("##############################");
     }
 }

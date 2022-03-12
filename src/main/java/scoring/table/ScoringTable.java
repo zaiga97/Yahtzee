@@ -7,4 +7,5 @@ public interface ScoringTable {
     ScoreCategory getScoringCategory(int index);
     void score(int index, int[] dicesValues);
     boolean isComplete();
+    int getCategoryCount();
 }
