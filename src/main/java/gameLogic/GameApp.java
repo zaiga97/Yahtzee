@@ -52,6 +52,7 @@ public class GameApp {
         }
 
         gw.drawEndGame();
+        gw.drawGameStatus(gs);
         start();
     }
 

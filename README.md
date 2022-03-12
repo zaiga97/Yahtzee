@@ -17,7 +17,7 @@ Here is a list of features I aim to implement:
 - -[x] Make the game go till the end/ give an option to exit
 - -[x] Refactor StandardWiew so it is useful.
 - -[ ] Fix input with error handling.
-- -[ ] Create the end of the game.
+- -[x] Create the end of the game.
 - -[x] Fix game logic so one can't score same category more than once
 - [ ] Add highscores.
 - [ ] Add local multiplayer.
