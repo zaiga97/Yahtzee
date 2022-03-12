@@ -61,6 +61,11 @@ public class StandardGameView implements GameView {
         System.out.println("Please enter the category index you want to score:");
     }
 
+    @Override
+    public void drawEndGame() {
+        System.out.println("#####   Game has ended      #####");
+    }
+
     public void drawScoringTable(ScoringTable scoringTable){
         System.out.println("gameLogic.Player score:" + scoringTable.getTotalScore());
         System.out.println("TABLEEEE");

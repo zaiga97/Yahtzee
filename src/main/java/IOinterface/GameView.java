@@ -10,4 +10,5 @@ public interface GameView {
     public void drawGameStatus(GameStatus gs);
     public void drawRerollRequest();
     public void drawScoringRequest();
+    public void drawEndGame();
 }

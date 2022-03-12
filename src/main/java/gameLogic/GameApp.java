@@ -36,7 +36,7 @@ public class GameApp {
         String playerName = gi.getPlayerName();
         gs = new GameStatus(playerName);
 
-        for (int i = 0; i < 3; i++) {
+        while(!gs.isComplete()) {
             gs.rollAll();
             gw.drawGameStatus(gs);
 
@@ -53,5 +53,8 @@ public class GameApp {
             gs.score(scoringIndex);
             gw.drawGameStatus(gs);
         }
+
+        gw.drawEndGame();
+        start();
     }
 }

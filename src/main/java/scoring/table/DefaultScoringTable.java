@@ -4,12 +4,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
-import java.util.function.Supplier;
 
-import scoring.category.BonusCategory;
-import scoring.category.GeneralCategory;
-import scoring.category.ScoreCategory;
-import scoring.category.SumOfUpperCategory;
+import scoring.category.*;
 
 public class DefaultScoringTable implements ScoringTable {
     //This is the scoring list:
@@ -242,5 +238,13 @@ public class DefaultScoringTable implements ScoringTable {
     @Override
     public void score(int index, int[] dicesValues) {
         scoringList[index].score(dicesValues);
+    }
+
+    @Override
+    public boolean isComplete() {
+        for (var category:scoringList) {
+            if (!category.isScored()) return false;
+        }
+        return true;
     }
 }

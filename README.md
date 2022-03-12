@@ -14,10 +14,11 @@ Here is a list of features I aim to implement:
 
 - [ ] Working game using the console for I/O.
 - -[x] Make the original ScoringTable for the game.
-- -[ ] Make the game go till the end/ give an option to exit
-- [ ] Refactor StandardWiew so it is useful.
+- -[x] Make the game go till the end/ give an option to exit
+- -[ ] Refactor StandardWiew so it is useful.
 - -[ ] Fix input with error handling.
 - -[ ] Create the end of the game.
+- -[ ] Fix game logic so one can't score same category more than once
 - [ ] Add highscores.
 - [ ] Add local multiplayer.
 - [ ] Add a graphic interface.

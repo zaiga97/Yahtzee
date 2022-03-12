@@ -48,4 +48,8 @@ public class GameStatus {
     public ScoringTable getScoringTable() {
         return scoringTable;
     }
+
+    public boolean isComplete() {
+        return scoringTable.isComplete();
+    }
 }
