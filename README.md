@@ -20,7 +20,8 @@ Here is a list of features I aim to implement:
   - [x] Fix game logic so one can't score same category more than once
 - [ ] Refactoring/Bug fixing
   - [ ] Fix input for error handling
-  - [ ] Refactor the scoring 
+  - [ ] Refactor the scoring
+  - [ ] Make already scored categories visible in gw
 - [ ] Add high scores.
 - [ ] Add local multiplayer.
 - [ ] Add a graphic interface.
