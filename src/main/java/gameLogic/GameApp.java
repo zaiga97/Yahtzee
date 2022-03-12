@@ -1,16 +1,30 @@
 package gameLogic;
 import IOinterface.*;
 
+/**
+ * This class is the orchestrator of the program.
+ * Contains the basic logic for the game and a basic menu.
+ * @author zaiga97
+ */
+
 public class GameApp {
-    private StandardGameStatus gs;
+    private GameStatus gs;
     private final GameView gw;
     private final GameInput gi;
 
+    /**
+     * Generate a new {@link GameApp}
+     * @param gw The {@link GameView} used for displaying the game.
+     * @param gi The {@link GameInput} used for getting the inputs.
+     */
     public GameApp(GameView gw, GameInput gi){
         this.gw = gw;
         this.gi = gi;
     }
 
+    /**
+     * This function start the game.
+     */
     public void start() {
         gw.drawMenu();
         int menuInput = gi.getMenuInput();
@@ -27,6 +41,10 @@ public class GameApp {
         }
     }
 
+    /**
+     * Initialize a new game. For now {@link StandardGameStatus} will be initialized
+     * One can modify this function or expand the class for supporting different {@link GameStatus}
+     */
     private void playNewGame() {
 
         // Initialize the new game
@@ -59,6 +77,10 @@ public class GameApp {
         start();
     }
 
+    /**
+     * Score the dices at the end of the turn.
+     * Prevents player to score same already scored categories.
+     */
     private void score() {
         int scoringIndex;
 
