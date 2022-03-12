@@ -22,8 +22,10 @@ public class StandardGameInput implements GameInput {
     @Override
     public int[] getRerollIndexes() {
         String inputString = sc.nextLine();
+        // If we don't want to reroll anymore
+        if (inputString.isEmpty()) return new int[]{};
+        // Else se need to get all the ints
         String[] indexesAsString = inputString.trim().split(" ");
-
         int[] indexes = new int[indexesAsString.length];
         for (int i = 0; i < indexesAsString.length; i++) {
             indexes[i] = Integer.parseInt(indexesAsString[i]);
