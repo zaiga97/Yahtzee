@@ -1,14 +1,14 @@
 package IOinterface;
 
-import gameLogic.StandardGameStatus;
+import gameLogic.GameStatus;
 
 public interface GameView {
-    public void drawMenu();
-    public void wrongInput();
-    public void drawNewGame();
-    public void drawPlayerNameRequest();
-    public void drawGameStatus(StandardGameStatus gs);
-    public void drawRerollRequest();
-    public void drawScoringRequest();
-    public void drawEndGame();
+    void drawMenu();
+    void drawWrongInput();
+    void drawNewGame();
+    void drawPlayerNameRequest();
+    void drawGameStatus(GameStatus gs);
+    void drawRerollRequest();
+    void drawScoringRequest();
+    void drawEndGame();
 }

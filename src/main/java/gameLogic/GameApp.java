@@ -22,7 +22,7 @@ public class GameApp {
                 break;
 
             default:
-                gw.wrongInput();
+                gw.drawWrongInput();
                 start();
         }
     }
@@ -67,7 +67,7 @@ public class GameApp {
             scoringIndex = gi.getScoringIndex();
 
             if (gs.isLegalScoring(scoringIndex)) break;
-            gw.wrongInput();
+            gw.drawWrongInput();
         }
 
         gs.score(scoringIndex);

@@ -1,7 +1,7 @@
 package IOinterface;
 
 import gameLogic.Dice;
-import gameLogic.StandardGameStatus;
+import gameLogic.GameStatus;
 import scoring.category.ScoreCategory;
 import scoring.table.ScoringTable;
 
@@ -10,16 +10,20 @@ public class StandardGameView implements GameView {
     @Override
     public void drawMenu() {
         System.out.println(
-                "###        MENU        ###\n\n" +
-                "       0 -> Exit\n" +
-                "       1 -> New game\n\n" +
-                "###                    ###\n" +
-                "enter an option from above:"
+                """
+                ###        MENU        ###
+
+                       0 -> Exit
+                       1 -> New game
+
+                ###                    ###
+                enter an option from above:
+                """
         );
     }
 
     @Override
-    public void wrongInput() {
+    public void drawWrongInput() {
         System.out.println("Got a wrong input... try again");
     }
 
@@ -34,7 +38,7 @@ public class StandardGameView implements GameView {
     }
 
     @Override
-    public void drawGameStatus(StandardGameStatus gs) {
+    public void drawGameStatus(GameStatus gs) {
         System.out.println(
                 "##############################\n" +
                 "-> Player: " + gs.getPlayer().getName() + "\n" +
@@ -74,7 +78,6 @@ public class StandardGameView implements GameView {
         System.out.println("#####   SCORING TABLE    #####");
         for (int i = 0; i < categoryCount; i++) {
             ScoreCategory scoreCategory = scoringTable.getScoringCategory(i);
-            //System.out.println("------------------------------"); //30 char
             System.out.println("| i: " + i + " | " + scoreCategory.getName() + " | " + scoreCategory.getScore() + " |");
         }
         System.out.println("##############################");

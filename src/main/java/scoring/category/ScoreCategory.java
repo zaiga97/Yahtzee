@@ -1,9 +1,5 @@
 package scoring.category;
 
-import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Function;
-
 public interface ScoreCategory {
     String getName();
     default int calculateScore(int[] dicesValues) {
