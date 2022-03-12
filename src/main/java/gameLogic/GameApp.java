@@ -48,13 +48,24 @@ public class GameApp {
             gs.reroll(gi.getRerollIndexes());
             gw.drawGameStatus(gs);
 
-            gw.drawScoringRequest();
-            int scoringIndex = gi.getScoringIndex();
-            gs.score(scoringIndex);
-            gw.drawGameStatus(gs);
+            score();
         }
 
         gw.drawEndGame();
         start();
+    }
+
+    private void score() {
+        int scoringIndex = 0;
+
+        while (true){
+            gw.drawScoringRequest();
+            scoringIndex = gi.getScoringIndex();
+
+            if (gs.isLegalScoring(scoringIndex)) break;
+            gw.wrongInput();
+        }
+
+        gs.score(scoringIndex);
     }
 }

@@ -52,4 +52,11 @@ public class GameStatus {
     public boolean isComplete() {
         return scoringTable.isComplete();
     }
+
+    public boolean isLegalScoring(int scoringIndex) {
+        // check if category is in the bound
+        if (scoringIndex<0 || scoringIndex >= scoringTable.getCategoryCount()) return false;
+        // check the scoringCategory is not  scored already
+        return !scoringTable.getScoringCategory(scoringIndex).isScored();
+    }
 }

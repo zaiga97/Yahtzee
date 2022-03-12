@@ -18,7 +18,7 @@ Here is a list of features I aim to implement:
 - -[x] Refactor StandardWiew so it is useful.
 - -[ ] Fix input with error handling.
 - -[ ] Create the end of the game.
-- -[ ] Fix game logic so one can't score same category more than once
+- -[x] Fix game logic so one can't score same category more than once
 - [ ] Add highscores.
 - [ ] Add local multiplayer.
 - [ ] Add a graphic interface.
