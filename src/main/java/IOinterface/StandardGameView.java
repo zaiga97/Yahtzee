@@ -5,6 +5,13 @@ import gameLogic.GameStatus;
 import scoring.category.ScoreCategory;
 import scoring.table.ScoringTable;
 
+/**
+ * This is the standard implementation of {@link GameView}.
+ * This uses the terminal for printing the game.
+ * Note that this may have some problem on non Unix platforms since it uses escape chars for colors.
+ * @author zaiga97
+ */
+
 public class StandardGameView implements GameView {
 
     public static final String ANSI_RESET = "\u001B[0m";

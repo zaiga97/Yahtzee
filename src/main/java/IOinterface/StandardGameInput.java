@@ -2,9 +2,18 @@ package IOinterface;
 
 import java.util.Scanner;
 
+/**
+ * This implementation of {@link GameInput} uses the terminal for gathering the input.
+ * Note that for the moment this class does not handle exception so if user enters a wrong input
+ * the application will crash.
+ */
+
 public class StandardGameInput implements GameInput {
     Scanner sc = new Scanner(System.in);
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int getMenuInput() {
         int menuInput = sc.nextInt();
@@ -12,6 +21,9 @@ public class StandardGameInput implements GameInput {
         return menuInput;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getPlayerName() {
         String name = sc.next();
@@ -19,6 +31,9 @@ public class StandardGameInput implements GameInput {
         return name;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int[] getRerollIndexes() {
         String inputString = sc.nextLine();
@@ -34,6 +49,9 @@ public class StandardGameInput implements GameInput {
         return indexes;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int getScoringIndex() {
         int scoringIndex = sc.nextInt();
