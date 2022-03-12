@@ -12,7 +12,6 @@ public class StandardGameView implements GameView {
     public static final String ANSI_GREEN = "\u001B[32m";
     public static final String ANSI_CYAN = "\u001B[36m";
 
-
     @Override
     public void drawMenu() {
         System.out.println(
@@ -23,8 +22,7 @@ public class StandardGameView implements GameView {
                        1 -> New game
 
                 ###                    ###
-                enter an option from above:
-                """
+                enter an option from above:"""
         );
     }
 
@@ -85,10 +83,13 @@ public class StandardGameView implements GameView {
         for (int i = 0; i < categoryCount; i++) {
             ScoreCategory scoreCategory = scoringTable.getScoringCategory(i);
             String color = scoreCategory.isScored() ? ANSI_GREEN : "";
-            System.out.println("| i: " + i + " | " + scoreCategory.getName() + " | "
-                    + color +
-                    scoreCategory.getScore() +
-                    ANSI_RESET + " |");
+            System.out.print(color + "| i: ");
+            System.out.printf("%3d", i);
+            System.out.print(" | ");
+            System.out.printf("%13s", scoreCategory.getName());
+            System.out.print(" | ");
+            System.out.printf("%3d", scoreCategory.getScore());
+            System.out.println( " |" + ANSI_RESET);
         }
         System.out.println("##############################");
     }
