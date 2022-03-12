@@ -1,7 +1,7 @@
 package IOinterface;
 
 import gameLogic.Dice;
-import gameLogic.GameStatus;
+import gameLogic.StandardGameStatus;
 import scoring.category.ScoreCategory;
 import scoring.table.ScoringTable;
 
@@ -34,7 +34,7 @@ public class StandardGameView implements GameView {
     }
 
     @Override
-    public void drawGameStatus(GameStatus gs) {
+    public void drawGameStatus(StandardGameStatus gs) {
         System.out.println(
                 "##############################\n" +
                 "-> Player: " + gs.getPlayer().getName() + "\n" +

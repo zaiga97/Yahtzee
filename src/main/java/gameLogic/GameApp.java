@@ -1,10 +1,8 @@
 package gameLogic;
-
-import IOinterface.GameInput;
-import IOinterface.GameView;
+import IOinterface.*;
 
 public class GameApp {
-    private GameStatus gs;
+    private StandardGameStatus gs;
     private final GameView gw;
     private final GameInput gi;
 
@@ -20,7 +18,7 @@ public class GameApp {
         switch (menuInput){
             case 0:
                 break;
-            case 1: newGameStart();
+            case 1: playNewGame();
                 break;
 
             default:
@@ -29,13 +27,15 @@ public class GameApp {
         }
     }
 
-    private void newGameStart() {
-        gw.drawNewGame();
+    private void playNewGame() {
 
+        // Initialize the new game
+        gw.drawNewGame();
         gw.drawPlayerNameRequest();
         String playerName = gi.getPlayerName();
-        gs = new GameStatus(playerName);
+        gs = new StandardGameStatus(playerName);
 
+        // Play the game
         while(!gs.isComplete()) {
             gs.rollAll();
             gw.drawGameStatus(gs);
@@ -51,13 +51,16 @@ public class GameApp {
             score();
         }
 
+        // Game ending
         gw.drawEndGame();
         gw.drawGameStatus(gs);
+
+        // Loop back to the menu
         start();
     }
 
     private void score() {
-        int scoringIndex = 0;
+        int scoringIndex;
 
         while (true){
             gw.drawScoringRequest();

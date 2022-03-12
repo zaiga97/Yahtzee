@@ -5,9 +5,9 @@ import java.util.Random;
 public class FairDice implements Dice {
 
     static final int MIN_VALUE = 1;
-    private int value = MIN_VALUE;
-
     private final int FACES;
+
+    private int value = MIN_VALUE; // Initialized so we can call getValue before rolling
     Random random = new Random();
 
     public FairDice(int faces) {
