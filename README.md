@@ -18,11 +18,12 @@ Here is a list of features I aim to implement:
   - [x] Refactor StandardVfiew so it is useful.
   - [x] Create the end of the game.
   - [x] Fix game logic so one can't score same category more than once
-- [ ] Refactoring/Bug fixing
+- [x] Refactoring/Bug fixing
   - [ ] Fix input for error handling
   - [x] Refactor the scoring
   - [x] Make already scored categories visible in gw
   - [x] Fix so one can choose not to reroll
+- [ ] Make documentation for all the project
 - [ ] Add high scores.
 - [ ] Add local multiplayer.
 - [ ] Add a graphic interface.
