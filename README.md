@@ -13,14 +13,14 @@ For implementing the game I will use a TDD aproach and gradle for build automati
 Here is a list of features I aim to implement:
 
 - [x] Working game using the console for I/O.
-- -[x] Make the original ScoringTable for the game.
-- -[x] Make the game go till the end/ give an option to exit
-- -[x] Refactor StandardVfiew so it is useful.
-- -[x] Create the end of the game.
-- -[x] Fix game logic so one can't score same category more than once
+  - [x] Make the original ScoringTable for the game.
+  - [x] Make the game go till the end/ give an option to exit
+  - [x] Refactor StandardVfiew so it is useful.
+  - [x] Create the end of the game.
+  - [x] Fix game logic so one can't score same category more than once
 - [ ] Refactoring/Bug fixing
-- -[ ] Fix input for error handling
-- -[ ] Refactor the scoring 
+  - [ ] Fix input for error handling
+  - [ ] Refactor the scoring 
 - [ ] Add high scores.
 - [ ] Add local multiplayer.
 - [ ] Add a graphic interface.
