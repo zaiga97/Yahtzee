@@ -77,6 +77,8 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">ScoreCategory</span></div>
+<div class="block">This interface is the base for any scoring category.
+ Some methods have a default implementation in case a derived class will not need them.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -93,10 +95,14 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#calculateScore()" class="member-name-link">calculateScore</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">This function will calculate the score of the category.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#calculateScore(int%5B%5D)" class="member-name-link">calculateScore</a><wbr>(int[]&nbsp;dicesValues)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">This function will calculate the score of the category based on an array of dices values.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
@@ -108,10 +114,14 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#score()" class="member-name-link">score</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Score the category.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#score(int%5B%5D)" class="member-name-link">score</a><wbr>(int[]&nbsp;dicesValues)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Score the category with the dices values provided.</div>
+</div>
 </div>
 </div>
 </div>
@@ -130,42 +140,74 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getName()">
 <h3>getName</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getName</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The name of the category.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="calculateScore(int[])">
 <h3>calculateScore</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">calculateScore</span><wbr><span class="parameters">(int[]&nbsp;dicesValues)</span></div>
+<div class="block">This function will calculate the score of the category based on an array of dices values.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>dicesValues</code> - The value of the dices.</dd>
+<dt>Returns:</dt>
+<dd>The score of the dice values in this category.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="calculateScore()">
 <h3>calculateScore</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">calculateScore</span>()</div>
+<div class="block">This function will calculate the score of the category. It will be used for categories where score
+ does not depend on the value of the dices.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The score of this category.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="score(int[])">
 <h3>score</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">score</span><wbr><span class="parameters">(int[]&nbsp;dicesValues)</span></div>
+<div class="block">Score the category with the dices values provided.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>dicesValues</code> - The value of the dices.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="score()">
 <h3>score</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">score</span>()</div>
+<div class="block">Score the category. This is to be used when category score does not depend on the dices values.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="getScore()">
 <h3>getScore</h3>
 <div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">getScore</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The current score in this category.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="isScored()">
 <h3>isScored</h3>
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">isScored</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if the category has already been scored once. Otherwise, False.
+ If the category can't be manually scored then this should always return true.</dd>
+</dl>
 </section>
 </li>
 </ul>

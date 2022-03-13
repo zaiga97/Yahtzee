@@ -23,7 +23,8 @@ Here is a list of features I aim to implement:
   - [x] Refactor the scoring
   - [x] Make already scored categories visible in gw
   - [x] Fix so one can choose not to reroll
-- [ ] Make documentation for all the project
+- [x] Make documentation for all the project
+- [ ] Refactor the scoring table/ category.
 - [ ] Add high scores.
 - [ ] Add local multiplayer.
 - [ ] Add a graphic interface.

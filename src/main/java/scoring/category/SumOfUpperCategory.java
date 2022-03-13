@@ -2,6 +2,11 @@ package scoring.category;
 
 import scoring.table.ScoringTable;
 
+/**
+ * This is a special category for calculating the score of the upper part of the table.
+ * @author zaiga97
+ */
+
 public class SumOfUpperCategory extends PartialCategory implements ScoreCategory{
     private final ScoringTable scoringTable;
 

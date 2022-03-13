@@ -2,6 +2,11 @@ package scoring.category;
 
 import scoring.table.ScoringTable;
 
+/**
+ * This is a special category calculating the bonus.
+ * @author zaiga97
+ */
+
 public class BonusCategory extends PartialCategory implements ScoreCategory{
     private final ScoringTable scoringTable;
 

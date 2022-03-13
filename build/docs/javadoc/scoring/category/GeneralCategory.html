@@ -84,6 +84,8 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">GeneralCategory</span>
 <span class="extends-implements">extends <a href="PartialCategory.html" title="class in scoring.category">PartialCategory</a>
 implements <a href="ScoreCategory.html" title="interface in scoring.category">ScoreCategory</a></span></div>
+<div class="block">This is a general implementation of a <a href="ScoreCategory.html" title="interface in scoring.category"><code>ScoreCategory</code></a>.
+ It can be used for all the category that score based on dice values.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -123,7 +125,9 @@ implements <a href="ScoreCategory.html" title="interface in scoring.category">Sc
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#calculateScore(int%5B%5D)" class="member-name-link">calculateScore</a><wbr>(int[]&nbsp;dicesValues)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">This function will calculate the score of the category based on an array of dices values.</div>
+</div>
 </div>
 </div>
 </div>
@@ -152,6 +156,11 @@ implements <a href="ScoreCategory.html" title="interface in scoring.category">Sc
 <h3>GeneralCategory</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">GeneralCategory</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;int[],<wbr><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;&nbsp;scoreFunction)</span></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>name</code> - Name of the category</dd>
+<dd><code>scoreFunction</code> - The function that provides the scoring of the category.</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -166,9 +175,14 @@ implements <a href="ScoreCategory.html" title="interface in scoring.category">Sc
 <section class="detail" id="calculateScore(int[])">
 <h3>calculateScore</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">calculateScore</span><wbr><span class="parameters">(int[]&nbsp;dicesValues)</span></div>
+<div class="block">This function will calculate the score of the category based on an array of dices values.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ScoreCategory.html#calculateScore(int%5B%5D)">calculateScore</a></code>&nbsp;in interface&nbsp;<code><a href="ScoreCategory.html" title="interface in scoring.category">ScoreCategory</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>dicesValues</code> - The value of the dices.</dd>
+<dt>Returns:</dt>
+<dd>The score of the dice values in this category.</dd>
 </dl>
 </section>
 </li>

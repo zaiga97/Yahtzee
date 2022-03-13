@@ -82,6 +82,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">DefaultScoringTable</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="ScoringTable.html" title="interface in scoring.table">ScoringTable</a></span></div>
+<div class="block">This is the implementation of the classic scoring table of the game of yahtzee!</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -120,7 +121,9 @@ implements <a href="ScoringTable.html" title="interface in scoring.table">Scorin
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isComplete()" class="member-name-link">isComplete</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Check if the table has been completed yet.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#score(int,int%5B%5D)" class="member-name-link">score</a><wbr>(int&nbsp;index,
  int[]&nbsp;dicesValues)</code></div>
@@ -163,6 +166,8 @@ implements <a href="ScoringTable.html" title="interface in scoring.table">Scorin
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ScoringTable.html#getTotalScore()">getTotalScore</a></code>&nbsp;in interface&nbsp;<code><a href="ScoringTable.html" title="interface in scoring.table">ScoringTable</a></code></dd>
+<dt>Returns:</dt>
+<dd>the current total score.</dd>
 </dl>
 </section>
 </li>
@@ -173,6 +178,10 @@ implements <a href="ScoringTable.html" title="interface in scoring.table">Scorin
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ScoringTable.html#getScoringCategory(int)">getScoringCategory</a></code>&nbsp;in interface&nbsp;<code><a href="ScoringTable.html" title="interface in scoring.table">ScoringTable</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>index</code> - the index of the category</dd>
+<dt>Returns:</dt>
+<dd>the category at that integer position.</dd>
 </dl>
 </section>
 </li>
@@ -191,9 +200,13 @@ implements <a href="ScoringTable.html" title="interface in scoring.table">Scorin
 <section class="detail" id="isComplete()">
 <h3>isComplete</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isComplete</span>()</div>
+<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="ScoringTable.html#isComplete()">ScoringTable</a></code></span></div>
+<div class="block">Check if the table has been completed yet.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ScoringTable.html#isComplete()">isComplete</a></code>&nbsp;in interface&nbsp;<code><a href="ScoringTable.html" title="interface in scoring.table">ScoringTable</a></code></dd>
+<dt>Returns:</dt>
+<dd>True if completed.</dd>
 </dl>
 </section>
 </li>
@@ -204,6 +217,8 @@ implements <a href="ScoringTable.html" title="interface in scoring.table">Scorin
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ScoringTable.html#getCategoryCount()">getCategoryCount</a></code>&nbsp;in interface&nbsp;<code><a href="ScoringTable.html" title="interface in scoring.table">ScoringTable</a></code></dd>
+<dt>Returns:</dt>
+<dd>Number of categories in the table.</dd>
 </dl>
 </section>
 </li>

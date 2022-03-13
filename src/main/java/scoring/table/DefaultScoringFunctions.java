@@ -5,6 +5,13 @@ import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
 
+/**
+ * This is a helper class for the {@link DefaultScoringTable}.
+ * It contains all the {@link Function} for calculating the scores.
+ *
+ * @author zaiga97
+ */
+
 public class DefaultScoringFunctions {
     //This is the scoring list:
 

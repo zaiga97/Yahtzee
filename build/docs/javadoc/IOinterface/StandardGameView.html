@@ -82,6 +82,9 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">StandardGameView</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="GameView.html" title="interface in IOinterface">GameView</a></span></div>
+<div class="block">This is the standard implementation of <a href="GameView.html" title="interface in IOinterface"><code>GameView</code></a>.
+ This uses the terminal for printing the game.
+ Note that this may have some problem on non Unix platforms since it uses escape chars for colors.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -135,31 +138,47 @@ implements <a href="GameView.html" title="interface in IOinterface">GameView</a>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawEndGame()" class="member-name-link">drawEndGame</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Draw the end of the game screen.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawGameStatus(gameLogic.GameStatus)" class="member-name-link">drawGameStatus</a><wbr>(<a href="../gameLogic/GameStatus.html" title="interface in gameLogic">GameStatus</a>&nbsp;gs)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Draw the game status.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawMenu()" class="member-name-link">drawMenu</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Draw the menu</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawNewGame()" class="member-name-link">drawNewGame</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Draw the start of a new game</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawPlayerNameRequest()" class="member-name-link">drawPlayerNameRequest</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Draw a request for the player to enter his name.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawRerollRequest()" class="member-name-link">drawRerollRequest</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Draw a request for the player for entering the dices he wants to reroll.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawScoringRequest()" class="member-name-link">drawScoringRequest</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Draw a request for the player to enter the category he wants to score.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawScoringTable(scoring.table.ScoringTable)" class="member-name-link">drawScoringTable</a><wbr>(<a href="../scoring/table/ScoringTable.html" title="interface in scoring.table">ScoringTable</a>&nbsp;scoringTable)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawWrongInput()" class="member-name-link">drawWrongInput</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Display an error on the screen if a wrong input is detected</div>
+</div>
 </div>
 </div>
 </div>
@@ -259,6 +278,7 @@ implements <a href="GameView.html" title="interface in IOinterface">GameView</a>
 <section class="detail" id="drawMenu()">
 <h3>drawMenu</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawMenu</span>()</div>
+<div class="block">Draw the menu</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="GameView.html#drawMenu()">drawMenu</a></code>&nbsp;in interface&nbsp;<code><a href="GameView.html" title="interface in IOinterface">GameView</a></code></dd>
@@ -269,6 +289,7 @@ implements <a href="GameView.html" title="interface in IOinterface">GameView</a>
 <section class="detail" id="drawWrongInput()">
 <h3>drawWrongInput</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawWrongInput</span>()</div>
+<div class="block">Display an error on the screen if a wrong input is detected</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="GameView.html#drawWrongInput()">drawWrongInput</a></code>&nbsp;in interface&nbsp;<code><a href="GameView.html" title="interface in IOinterface">GameView</a></code></dd>
@@ -279,6 +300,7 @@ implements <a href="GameView.html" title="interface in IOinterface">GameView</a>
 <section class="detail" id="drawNewGame()">
 <h3>drawNewGame</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawNewGame</span>()</div>
+<div class="block">Draw the start of a new game</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="GameView.html#drawNewGame()">drawNewGame</a></code>&nbsp;in interface&nbsp;<code><a href="GameView.html" title="interface in IOinterface">GameView</a></code></dd>
@@ -289,6 +311,7 @@ implements <a href="GameView.html" title="interface in IOinterface">GameView</a>
 <section class="detail" id="drawPlayerNameRequest()">
 <h3>drawPlayerNameRequest</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawPlayerNameRequest</span>()</div>
+<div class="block">Draw a request for the player to enter his name.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="GameView.html#drawPlayerNameRequest()">drawPlayerNameRequest</a></code>&nbsp;in interface&nbsp;<code><a href="GameView.html" title="interface in IOinterface">GameView</a></code></dd>
@@ -299,6 +322,9 @@ implements <a href="GameView.html" title="interface in IOinterface">GameView</a>
 <section class="detail" id="drawGameStatus(gameLogic.GameStatus)">
 <h3>drawGameStatus</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawGameStatus</span><wbr><span class="parameters">(<a href="../gameLogic/GameStatus.html" title="interface in gameLogic">GameStatus</a>&nbsp;gs)</span></div>
+<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="GameView.html#drawGameStatus(gameLogic.GameStatus)">GameView</a></code></span></div>
+<div class="block">Draw the game status. This should give the player all the information he needs to play the game.
+ In particular both the boards and the dices needs to be displayed.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="GameView.html#drawGameStatus(gameLogic.GameStatus)">drawGameStatus</a></code>&nbsp;in interface&nbsp;<code><a href="GameView.html" title="interface in IOinterface">GameView</a></code></dd>
@@ -309,6 +335,7 @@ implements <a href="GameView.html" title="interface in IOinterface">GameView</a>
 <section class="detail" id="drawRerollRequest()">
 <h3>drawRerollRequest</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawRerollRequest</span>()</div>
+<div class="block">Draw a request for the player for entering the dices he wants to reroll.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="GameView.html#drawRerollRequest()">drawRerollRequest</a></code>&nbsp;in interface&nbsp;<code><a href="GameView.html" title="interface in IOinterface">GameView</a></code></dd>
@@ -319,6 +346,7 @@ implements <a href="GameView.html" title="interface in IOinterface">GameView</a>
 <section class="detail" id="drawScoringRequest()">
 <h3>drawScoringRequest</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawScoringRequest</span>()</div>
+<div class="block">Draw a request for the player to enter the category he wants to score.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="GameView.html#drawScoringRequest()">drawScoringRequest</a></code>&nbsp;in interface&nbsp;<code><a href="GameView.html" title="interface in IOinterface">GameView</a></code></dd>
@@ -329,6 +357,7 @@ implements <a href="GameView.html" title="interface in IOinterface">GameView</a>
 <section class="detail" id="drawEndGame()">
 <h3>drawEndGame</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawEndGame</span>()</div>
+<div class="block">Draw the end of the game screen.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="GameView.html#drawEndGame()">drawEndGame</a></code>&nbsp;in interface&nbsp;<code><a href="GameView.html" title="interface in IOinterface">GameView</a></code></dd>

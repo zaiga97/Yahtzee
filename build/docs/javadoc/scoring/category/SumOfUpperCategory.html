@@ -84,6 +84,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">SumOfUpperCategory</span>
 <span class="extends-implements">extends <a href="PartialCategory.html" title="class in scoring.category">PartialCategory</a>
 implements <a href="ScoreCategory.html" title="interface in scoring.category">ScoreCategory</a></span></div>
+<div class="block">This is a special category for calculating the score of the upper part of the table.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -123,16 +124,20 @@ implements <a href="ScoreCategory.html" title="interface in scoring.category">Sc
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#calculateScore()" class="member-name-link">calculateScore</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">This function will calculate the score of the category.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getScore()" class="member-name-link">getScore</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"></div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isScored()" class="member-name-link">isScored</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"></div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#score()" class="member-name-link">score</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Score the category.</div>
+</div>
 </div>
 </div>
 </div>
@@ -175,9 +180,14 @@ implements <a href="ScoreCategory.html" title="interface in scoring.category">Sc
 <section class="detail" id="calculateScore()">
 <h3>calculateScore</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">calculateScore</span>()</div>
+<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="ScoreCategory.html#calculateScore()">ScoreCategory</a></code></span></div>
+<div class="block">This function will calculate the score of the category. It will be used for categories where score
+ does not depend on the value of the dices.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ScoreCategory.html#calculateScore()">calculateScore</a></code>&nbsp;in interface&nbsp;<code><a href="ScoreCategory.html" title="interface in scoring.category">ScoreCategory</a></code></dd>
+<dt>Returns:</dt>
+<dd>The score of this category.</dd>
 </dl>
 </section>
 </li>
@@ -185,6 +195,8 @@ implements <a href="ScoreCategory.html" title="interface in scoring.category">Sc
 <section class="detail" id="score()">
 <h3>score</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">score</span>()</div>
+<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="ScoreCategory.html#score()">ScoreCategory</a></code></span></div>
+<div class="block">Score the category. This is to be used when category score does not depend on the dices values.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ScoreCategory.html#score()">score</a></code>&nbsp;in interface&nbsp;<code><a href="ScoreCategory.html" title="interface in scoring.category">ScoreCategory</a></code></dd>
@@ -195,11 +207,14 @@ implements <a href="ScoreCategory.html" title="interface in scoring.category">Sc
 <section class="detail" id="getScore()">
 <h3>getScore</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getScore</span>()</div>
+<div class="block"><span class="descfrm-type-label">Description copied from class:&nbsp;<code><a href="PartialCategory.html#getScore()">PartialCategory</a></code></span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ScoreCategory.html#getScore()">getScore</a></code>&nbsp;in interface&nbsp;<code><a href="ScoreCategory.html" title="interface in scoring.category">ScoreCategory</a></code></dd>
 <dt>Overrides:</dt>
 <dd><code><a href="PartialCategory.html#getScore()">getScore</a></code>&nbsp;in class&nbsp;<code><a href="PartialCategory.html" title="class in scoring.category">PartialCategory</a></code></dd>
+<dt>Returns:</dt>
+<dd>The current score in this category.</dd>
 </dl>
 </section>
 </li>
@@ -207,11 +222,15 @@ implements <a href="ScoreCategory.html" title="interface in scoring.category">Sc
 <section class="detail" id="isScored()">
 <h3>isScored</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isScored</span>()</div>
+<div class="block"><span class="descfrm-type-label">Description copied from class:&nbsp;<code><a href="PartialCategory.html#isScored()">PartialCategory</a></code></span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ScoreCategory.html#isScored()">isScored</a></code>&nbsp;in interface&nbsp;<code><a href="ScoreCategory.html" title="interface in scoring.category">ScoreCategory</a></code></dd>
 <dt>Overrides:</dt>
 <dd><code><a href="PartialCategory.html#isScored()">isScored</a></code>&nbsp;in class&nbsp;<code><a href="PartialCategory.html" title="class in scoring.category">PartialCategory</a></code></dd>
+<dt>Returns:</dt>
+<dd>True if the category has already been scored once. Otherwise, False.
+ If the category can't be manually scored then this should always return true.</dd>
 </dl>
 </section>
 </li>

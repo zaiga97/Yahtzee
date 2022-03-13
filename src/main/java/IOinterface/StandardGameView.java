@@ -19,6 +19,9 @@ public class StandardGameView implements GameView {
     public static final String ANSI_GREEN = "\u001B[32m";
     public static final String ANSI_CYAN = "\u001B[36m";
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void drawMenu() {
         System.out.println(
@@ -33,16 +36,25 @@ public class StandardGameView implements GameView {
         );
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void drawWrongInput() {
         System.out.println(ANSI_RED + "Got a wrong input... try again" + ANSI_RESET);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void drawNewGame() {
         System.out.println(ANSI_CYAN + "Welcome to a new game" + ANSI_RESET);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void drawPlayerNameRequest() {
         System.out.println("Enter your name:");
@@ -69,16 +81,25 @@ public class StandardGameView implements GameView {
         System.out.println("##############################");
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void drawRerollRequest() {
         System.out.println("Please enter the indexes of the dices you want to reroll: ");
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void drawScoringRequest() {
         System.out.println("Please enter the category index you want to score:");
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void drawEndGame() {
         System.out.println(ANSI_CYAN + "#####   Game has ended      #####" + ANSI_RESET);

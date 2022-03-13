@@ -82,6 +82,9 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">StandardGameInput</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="GameInput.html" title="interface in IOinterface">GameInput</a></span></div>
+<div class="block">This implementation of <a href="GameInput.html" title="interface in IOinterface"><code>GameInput</code></a> uses the terminal for gathering the input.
+ Note that for the moment this class does not handle exception so if user enters a wrong input
+ the application will crash.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -111,16 +114,16 @@ implements <a href="GameInput.html" title="interface in IOinterface">GameInput</
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMenuInput()" class="member-name-link">getMenuInput</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"></div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlayerName()" class="member-name-link">getPlayerName</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"></div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int[]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRerollIndexes()" class="member-name-link">getRerollIndexes</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"></div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getScoringIndex()" class="member-name-link">getScoringIndex</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"></div>
 </div>
 </div>
 </div>
@@ -159,6 +162,8 @@ implements <a href="GameInput.html" title="interface in IOinterface">GameInput</
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="GameInput.html#getMenuInput()">getMenuInput</a></code>&nbsp;in interface&nbsp;<code><a href="GameInput.html" title="interface in IOinterface">GameInput</a></code></dd>
+<dt>Returns:</dt>
+<dd>1 for new game, 0 for exiting the menu</dd>
 </dl>
 </section>
 </li>
@@ -169,6 +174,8 @@ implements <a href="GameInput.html" title="interface in IOinterface">GameInput</
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="GameInput.html#getPlayerName()">getPlayerName</a></code>&nbsp;in interface&nbsp;<code><a href="GameInput.html" title="interface in IOinterface">GameInput</a></code></dd>
+<dt>Returns:</dt>
+<dd>the player name as <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a></dd>
 </dl>
 </section>
 </li>
@@ -179,6 +186,9 @@ implements <a href="GameInput.html" title="interface in IOinterface">GameInput</
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="GameInput.html#getRerollIndexes()">getRerollIndexes</a></code>&nbsp;in interface&nbsp;<code><a href="GameInput.html" title="interface in IOinterface">GameInput</a></code></dd>
+<dt>Returns:</dt>
+<dd>An array of int with the position of dices to reroll.
+ If no dices are to reroll then return and empty array</dd>
 </dl>
 </section>
 </li>
@@ -189,6 +199,8 @@ implements <a href="GameInput.html" title="interface in IOinterface">GameInput</
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="GameInput.html#getScoringIndex()">getScoringIndex</a></code>&nbsp;in interface&nbsp;<code><a href="GameInput.html" title="interface in IOinterface">GameInput</a></code></dd>
+<dt>Returns:</dt>
+<dd>The index of the category to score.</dd>
 </dl>
 </section>
 </li>

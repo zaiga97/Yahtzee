@@ -1,8 +1,15 @@
 package scoring.table;
 
 import java.util.Arrays;
-
 import scoring.category.*;
+
+/**
+ * This is the implementation of the classic scoring table of the game of yahtzee!
+ * @author zaiga97
+ */
+
+// For now the class uses an array and some magic numbers for positions...
+// Maybe a Map and an enum would be better.
 
 public class DefaultScoringTable implements ScoringTable {
 
