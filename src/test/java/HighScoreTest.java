@@ -2,6 +2,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -15,19 +16,22 @@ public class HighScoreTest {
 
     @Test
     public void setScoreTest(){
-       player1Scores.forEach(score -> highScore.add("Player1", score));
-       player2Scores.forEach(score -> highScore.add("Player2", score));
+        player1Scores.forEach(score -> highScore.add("Player1", score));
+        player2Scores.forEach(score -> highScore.add("Player2", score));
 
-        assertTrue(highScore.getPlayerScores("Player1").containsAll(player1Scores));
-        assertTrue(highScore.getPlayerScores("Player2").containsAll(player2Scores));
+        Map<String, List<Integer>> scoreHistory = highScore.getScoreHistory();
+
+        assertTrue(scoreHistory.get("Player1").containsAll(player1Scores));
+        assertTrue(scoreHistory.get("Player2").containsAll(player2Scores));
     }
 
     @Test
     public void ableToLoadFormFileTest(){
         highScore.load("./src/test/resources/highScoreLoadTest");
+        Map<String, List<Integer>> scoreHistory = highScore.getScoreHistory();
 
-        assertTrue(highScore.getPlayerScores("Player1").containsAll(player1Scores));
-        assertTrue(highScore.getPlayerScores("Player2").containsAll(player2Scores));
+        assertTrue(scoreHistory.get("Player1").containsAll(player1Scores));
+        assertTrue(scoreHistory.get("Player2").containsAll(player2Scores));
     }
 
     @Test
@@ -39,14 +43,8 @@ public class HighScoreTest {
         highScore = new HighScore();
         highScore.load("./src/test/resources/highScoreWriteTest");
 
-        assertTrue(highScore.getPlayerScores("Player1").containsAll(player1Scores));
-        assertTrue(highScore.getPlayerScores("Player2").containsAll(player2Scores));
-    }
-
-    @Test
-    public void getRecordTest(){
-        highScore.load("./src/test/resources/highScoreLoadTest");
-        assertEquals(player1Scores.stream().max(Integer::compareTo).get(), highScore.getRecord("Player1"));
-        assertEquals(player2Scores.stream().max(Integer::compareTo).get(), highScore.getRecord("Player2"));
+        Map<String, List<Integer>> scoreHistory = highScore.getScoreHistory();
+        assertTrue(scoreHistory.get("Player1").containsAll(player1Scores));
+        assertTrue(scoreHistory.get("Player2").containsAll(player2Scores));
     }
 }

@@ -2,7 +2,11 @@ import java.io.*;
 import java.util.*;
 
 public class HighScore {
-    private Map<String, List<Integer>> scoreHistory = new HashMap<>();
+    private Map<String, List<Integer>> scoreHistory;
+
+    public HighScore() {
+        scoreHistory = new HashMap<>();
+    }
 
     public void add(String name, int score) {
 
@@ -14,10 +18,6 @@ public class HighScore {
         }
 
         scoreHistory.putIfAbsent(name, Collections.singletonList(score));
-    }
-
-    public List<Integer> getPlayerScores(String name) {
-        return scoreHistory.get(name);
     }
 
     public void load(String path) {
@@ -57,7 +57,7 @@ public class HighScore {
         }
     }
 
-    public Integer getRecord(String name) {
-        return scoreHistory.get(name).stream().max(Integer::compareTo).get();
+    public Map<String, List<Integer>> getScoreHistory() {
+        return scoreHistory;
     }
 }
