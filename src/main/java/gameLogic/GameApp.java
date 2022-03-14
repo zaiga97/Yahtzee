@@ -11,6 +11,8 @@ public class GameApp {
     private GameStatus gs;
     private final GameView gw;
     private final GameInput gi;
+    private final HighScore highScore = new HighScore();
+    private final String highScorePath = "./src/main/resources/scoringHistory";
 
     /**
      * Generate a new {@link GameApp}
@@ -34,11 +36,20 @@ public class GameApp {
                 break;
             case 1: playNewGame();
                 break;
+            case 2: showHighScores();
+                break;
 
             default:
                 gw.drawWrongInput();
+                System.out.println(menuInput);
                 start();
         }
+    }
+
+    private void showHighScores() {
+        highScore.load(highScorePath);
+        gw.drawHighScores(highScore.getScoreHistory());
+        start();
     }
 
     /**
@@ -73,8 +84,16 @@ public class GameApp {
         gw.drawEndGame();
         gw.drawGameStatus(gs);
 
+        saveScore();
+
         // Loop back to the menu
         start();
+    }
+
+    private void saveScore() {
+        highScore.load(highScorePath);
+        highScore.add(gs.getPlayer().getName(), gs.getScore());
+        highScore.write(highScorePath);
     }
 
     /**

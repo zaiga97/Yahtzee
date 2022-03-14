@@ -2,6 +2,9 @@ package IOinterface;
 
 import gameLogic.GameStatus;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * This is the interface for the game output.
  * @author zaiga97
@@ -48,4 +51,10 @@ public interface GameView {
      * Draw the end of the game screen.
      */
     void drawEndGame();
+
+    /**
+     * Draw the High scores for the players.
+     * @param scoreHistory This is a map of players names as keys and a list of scores as values
+     */
+    void drawHighScores(Map<String, List<Integer>> scoreHistory);
 }

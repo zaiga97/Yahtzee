@@ -5,6 +5,9 @@ import gameLogic.GameStatus;
 import scoring.category.ScoreCategory;
 import scoring.table.ScoringTable;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * This is the standard implementation of {@link GameView}.
  * This uses the terminal for printing the game.
@@ -30,6 +33,7 @@ public class StandardGameView implements GameView {
 
                        0 -> Exit
                        1 -> New game
+                       2 -> High scores
 
                 ###                    ###
                 enter an option from above:"""
@@ -103,6 +107,15 @@ public class StandardGameView implements GameView {
     @Override
     public void drawEndGame() {
         System.out.println(ANSI_CYAN + "#####   Game has ended      #####" + ANSI_RESET);
+    }
+
+    @Override
+    public void drawHighScores(Map<String, List<Integer>> scoreHistory) {
+        System.out.println("#####     HIGH SCORES    #####\n");
+        scoreHistory.forEach((s, integers) -> {
+            System.out.println(s + ": " + integers.stream().max(Integer::compareTo).get());
+        });
+        System.out.println("\n##############################\n");
     }
 
     public void drawScoringTable(ScoringTable scoringTable){
