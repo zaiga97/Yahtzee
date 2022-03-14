@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
 
 public class HighScore {
@@ -17,5 +19,19 @@ public class HighScore {
 
     public List<Integer> getScores(String name) {
         return scoreHistory.get(name);
+    }
+
+    public void load(String path) {
+        scoreHistory = new HashMap<>();
+
+        try {
+            Scanner scanner = new Scanner(new File(path));
+            while (scanner.hasNextLine()){
+                add(scanner.next(), scanner.nextInt());
+            }
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
