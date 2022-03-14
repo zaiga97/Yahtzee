@@ -16,7 +16,7 @@ public class HighScore {
         scoreHistory.putIfAbsent(name, Collections.singletonList(score));
     }
 
-    public List<Integer> getScores(String name) {
+    public List<Integer> getPlayerScores(String name) {
         return scoreHistory.get(name);
     }
 
