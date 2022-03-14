@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="HighScoreTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-03-14T14:11:10" hostname="Yoga7" time="0.031">
+<testsuite name="HighScoreTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-14T14:38:33" hostname="Yoga7" time="0.022">
   <properties/>
-  <testcase name="setScoreTest()" classname="HighScoreTest" time="0.023"/>
-  <testcase name="ableToLoadFormFileTest()" classname="HighScoreTest" time="0.006"/>
+  <testcase name="getRecordTest()" classname="HighScoreTest" time="0.022"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
