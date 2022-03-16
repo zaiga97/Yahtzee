@@ -14,6 +14,7 @@ public class GameApp {
     private final HighScore highScore = new HighScore();
     private final String highScorePath = "./src/main/resources/scoringHistory";
 
+    public enum MENUACTIONS{END, NEWGAME, HIGHSCORES, NOTDEFINED}
     /**
      * Generate a new {@link GameApp}
      * @param gw The {@link GameView} used for displaying the game.
@@ -29,14 +30,14 @@ public class GameApp {
      */
     public void start() {
         gw.drawMenu();
-        int menuInput = gi.getMenuInput();
+        MENUACTIONS menuInput = gi.getMenuInput();
 
         switch (menuInput){
-            case 0:
+            case END:
                 break;
-            case 1: playNewGame();
+            case NEWGAME: playNewGame();
                 break;
-            case 2: showHighScores();
+            case HIGHSCORES: showHighScores();
                 break;
 
             default:

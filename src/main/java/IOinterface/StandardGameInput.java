@@ -1,5 +1,7 @@
 package IOinterface;
 
+import gameLogic.GameApp;
+
 import java.util.Scanner;
 
 /**
@@ -13,12 +15,18 @@ public class StandardGameInput implements GameInput {
 
     /**
      * {@inheritDoc}
+     * @return
      */
     @Override
-    public int getMenuInput() {
+    public GameApp.MENUACTIONS getMenuInput() {
         int menuInput = sc.nextInt();
         sc.nextLine();
-        return menuInput;
+        return switch (menuInput) {
+            case 0 -> GameApp.MENUACTIONS.END;
+            case 1 -> GameApp.MENUACTIONS.NEWGAME;
+            case 2 -> GameApp.MENUACTIONS.HIGHSCORES;
+            default -> GameApp.MENUACTIONS.NOTDEFINED;
+        };
     }
 
     /**

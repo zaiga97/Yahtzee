@@ -1,5 +1,7 @@
 package IOinterface;
 
+import gameLogic.GameApp;
+
 /**
  * This is the interface for input.
  * @author zaiga97
@@ -8,7 +10,7 @@ public interface GameInput {
     /**
      * @return 1 for new game, 0 for exiting the menu
      */
-    int getMenuInput();
+    GameApp.MENUACTIONS getMenuInput();
 
     /**
      * @return the player name as {@link String}
