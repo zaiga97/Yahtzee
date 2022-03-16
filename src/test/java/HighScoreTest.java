@@ -5,12 +5,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class HighScoreTest {
     HighScore highScore = new HighScore();
-    //This are some random values for testing the highScore
+
+    //Some random values for testing the highScore
     //If you change this also change them in the highScoreLoadTest file in resources
     List<Integer> player1Scores = Arrays.asList(1,1,2);
     List<Integer> player2Scores = Arrays.asList(1,3);
