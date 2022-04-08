@@ -19,7 +19,7 @@ public interface ScoreCategory {
      */
     default int calculateScore(int[] dicesValues) {
         return 0;
-    };
+    }
 
     /**
      * This function will calculate the score of the category. It will be used for categories where score
@@ -28,18 +28,18 @@ public interface ScoreCategory {
      */
     default int calculateScore() {
         return 0;
-    };
+    }
 
     /**
      * Score the category with the dices values provided.
      * @param dicesValues The value of the dices.
      */
-    default void score(int[] dicesValues) {};
+    default void score(int[] dicesValues) {}
 
     /**
      * Score the category. This is to be used when category score does not depend on the dices values.
      */
-    default void score() {};
+    default void score() {}
 
     /**
      * @return The current score in this category.

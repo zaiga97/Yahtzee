@@ -14,7 +14,7 @@ import scoring.category.*;
 public class DefaultScoringTable implements ScoringTable {
 
     private static final int CATEGORYCOUNT = 17;
-    ScoreCategory[] scoringArray = new ScoreCategory[CATEGORYCOUNT];
+    private ScoreCategory[] scoringArray = new ScoreCategory[CATEGORYCOUNT];
 
     public DefaultScoringTable(){
         //0: # of 1

@@ -1,6 +1,7 @@
 package IOinterface;
 
 import gameLogic.GameApp;
+import scoring.table.ScoringTable;
 
 /**
  * This is the interface for input.
