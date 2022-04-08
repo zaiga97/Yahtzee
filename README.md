@@ -1,10 +1,11 @@
-# gameLogic.Yahtzee
+# Yahtzee
 A java implementation of the popular game of yahtzee.
 
 ## The game
 
 The game of yahtzee is a popular chance game that uses dices to score points on a table.
-[Here](https://en.wikipedia.org/wiki/gameLogic.Yahtzee) are the basic rules of the game. Note that there are multiple variation of the game, I will implement this as the "official" one.
+[Here](https://en.wikipedia.org/wiki/gameLogic.Yahtzee) are the basic rules of the game. Note that there are multiple variation of the game, I will not implement this one but one with slightly different rules.
+[Here]() are the rules of the implemented game.
 The game will (at least for the moment) be and offline single player with the player aiming to get the higher possible score.
 
 ## The implementation
@@ -24,6 +25,7 @@ Here is a list of features I aim to implement:
   - [x] Make already scored categories visible in gw
   - [x] Fix so one can choose not to reroll
 - [x] Make documentation for all the project
+- [ ] Refactor the menu out of the interface.
 - [ ] Refactor the scoring table/ category.
 - [ ] Add high scores.
 - [ ] Add local multiplayer.
