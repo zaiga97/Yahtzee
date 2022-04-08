@@ -42,7 +42,6 @@ public class GameApp {
 
             default:
                 gw.drawWrongInput();
-                System.out.println(menuInput);
                 start();
         }
     }
@@ -71,11 +70,11 @@ public class GameApp {
             gw.drawGameStatus(gs);
 
             gw.drawRerollRequest();
-            gs.reroll(gi.getRerollIndexes());
+            gs.reroll(gi.getRerollIndexes(gs.getNumberOfDices()));
             gw.drawGameStatus(gs);
 
             gw.drawRerollRequest();
-            gs.reroll(gi.getRerollIndexes());
+            gs.reroll(gi.getRerollIndexes(gs.getNumberOfDices()));
             gw.drawGameStatus(gs);
 
             score();

@@ -11,7 +11,12 @@ import java.util.Scanner;
  */
 
 public class StandardGameInput implements GameInput {
+    private final Runnable errorPrinter;
     Scanner sc = new Scanner(System.in);
+
+    public StandardGameInput(Runnable errorPrinter){
+        this.errorPrinter = errorPrinter;
+    }
 
     /**
      * {@inheritDoc}
@@ -19,8 +24,17 @@ public class StandardGameInput implements GameInput {
      */
     @Override
     public GameApp.MENUACTIONS getMenuInput() {
-        int menuInput = sc.nextInt();
+        int menuInput;
+        try {
+            menuInput = sc.nextInt();
+        }
+        catch (Exception e){
+            errorPrinter.run();
+            sc.nextLine();
+            return getMenuInput();
+        }
         sc.nextLine();
+
         return switch (menuInput) {
             case 0 -> GameApp.MENUACTIONS.END;
             case 1 -> GameApp.MENUACTIONS.NEWGAME;
@@ -34,24 +48,46 @@ public class StandardGameInput implements GameInput {
      */
     @Override
     public String getPlayerName() {
-        String name = sc.next();
+        String name;
+        try{
+            name = sc.next();
+        }
+        catch (Exception e){
+            errorPrinter.run();
+            sc.nextLine();
+            return getPlayerName();
+        }
+
         sc.nextLine();
         return name;
     }
 
     /**
      * {@inheritDoc}
+     * @param numberOfDices
      */
     @Override
-    public int[] getRerollIndexes() {
+    public int[] getRerollIndexes(int numberOfDices) {
         String inputString = sc.nextLine();
         // If we don't want to reroll anymore
         if (inputString.isEmpty()) return new int[]{};
         // Else se need to get all the ints
         String[] indexesAsString = inputString.trim().split(" ");
         int[] indexes = new int[indexesAsString.length];
-        for (int i = 0; i < indexesAsString.length; i++) {
-            indexes[i] = Integer.parseInt(indexesAsString[i]);
+        // Check if all the sub string are numbers
+        try {
+            for (int i = 0; i < indexesAsString.length; i++) {
+                int rerollIndex = Integer.parseInt(indexesAsString[i]);
+                if (rerollIndex < 0 || rerollIndex >= numberOfDices){
+                    throw new Exception();
+                }
+                indexes[i] = Integer.parseInt(indexesAsString[i]);
+
+            }
+        }
+        catch (Exception e){
+            errorPrinter.run();
+            return getRerollIndexes(numberOfDices);
         }
 
         return indexes;
@@ -62,7 +98,15 @@ public class StandardGameInput implements GameInput {
      */
     @Override
     public int getScoringIndex() {
-        int scoringIndex = sc.nextInt();
+        int scoringIndex;
+        try{
+            scoringIndex = sc.nextInt();
+        }
+        catch (Exception e){
+            errorPrinter.run();
+            sc.nextLine();
+            return getScoringIndex();
+        }
         sc.nextLine();
         return scoringIndex;
     }

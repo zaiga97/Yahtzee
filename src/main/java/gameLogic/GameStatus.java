@@ -9,6 +9,11 @@ import scoring.table.ScoringTable;
 
 public interface GameStatus {
     /**
+     * @return The number of dices used in the game.
+     */
+    int getNumberOfDices();
+
+    /**
      * @return Who is playing the game.
      */
     Player getPlayer();

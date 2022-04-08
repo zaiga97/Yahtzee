@@ -30,6 +30,11 @@ public class StandardGameStatus implements GameStatus {
         }
     }
 
+    @Override
+    public int getNumberOfDices() {
+        return NDICES;
+    }
+
     /**
      * @return The player playing the game.
      */

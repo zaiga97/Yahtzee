@@ -45,7 +45,7 @@ public class StandardGameView implements GameView {
      */
     @Override
     public void drawWrongInput() {
-        System.out.println(ANSI_RED + "Got a wrong input... try again" + ANSI_RESET);
+        System.out.println(ANSI_RED + "The input you entered is not valid. Go again:" + ANSI_RESET);
     }
 
     /**

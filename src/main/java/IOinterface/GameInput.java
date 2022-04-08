@@ -8,7 +8,7 @@ import gameLogic.GameApp;
  */
 public interface GameInput {
     /**
-     * @return 1 for new game, 0 for exiting the menu
+     * @return the menu action to perform.
      */
     GameApp.MENUACTIONS getMenuInput();
 
@@ -20,8 +20,9 @@ public interface GameInput {
     /**
      * @return An array of int with the position of dices to reroll.
      * If no dices are to reroll then return and empty array
+     * @param numberOfDices Number of active dices.
      */
-    int[] getRerollIndexes();
+    int[] getRerollIndexes(int numberOfDices);
 
     /**
      * @return The index of the category to score.

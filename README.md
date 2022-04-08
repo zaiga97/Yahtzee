@@ -11,7 +11,8 @@ The game will (at least for the moment) be and offline single player with the pl
 ## The implementation
 
 For implementing the game I will use a TDD approach and gradle for build automation.
-Here is a list of features I aim to implement:
+
+To do list:
 
 - [x] Working game using the console for I/O.
   - [x] Make the original ScoringTable for the game.
@@ -20,11 +21,12 @@ Here is a list of features I aim to implement:
   - [x] Create the end of the game.
   - [x] Fix game logic so one can't score same category more than once
 - [x] Refactoring/Bug fixing
-  - [ ] Fix input for error handling
+  - [x] Fix input for error handling
   - [x] Refactor the scoring
   - [x] Make already scored categories visible in gw
   - [x] Fix so one can choose not to reroll
-- [x] Make documentation for all the project
+- [x] Make documentation for all the project.
+- [ ] Refactor the standard game view to make it more usable.
 - [ ] Refactor the menu out of the interface.
 - [ ] Refactor the scoring table/ category.
 - [ ] Add high scores.
