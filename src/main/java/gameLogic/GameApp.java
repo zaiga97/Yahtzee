@@ -81,8 +81,8 @@ public class GameApp {
         }
 
         // Game ending
-        gw.drawEndGame();
         gw.drawGameStatus(gs);
+        gw.drawEndGame();
 
         saveScore();
 

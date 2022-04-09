@@ -19,10 +19,10 @@ public class ScoreCategoryTest {
                 SUMF
         );
         assertEquals(15, generalCategory.calculateScore(diceValues));
-        assertEquals(false, generalCategory.isScored());
+        assertFalse(generalCategory.isScored());
         generalCategory.score(diceValues);
         assertEquals(15, generalCategory.getScore());
-        assertEquals(true, generalCategory.isScored());
+        assertTrue(generalCategory.isScored());
     }
 
 }
