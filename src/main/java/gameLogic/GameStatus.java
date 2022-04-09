@@ -30,13 +30,13 @@ public interface GameStatus {
 
     /**
      * Reroll only the dices at the position of the indexes passed.
-     * @param indexes
+     * @param indexes dice indexes to reroll
      */
     void reroll(int[] indexes);
 
     /**
      * Score at the category index passed.
-     * @param scoringIndex
+     * @param scoringIndex category where to score.
      */
     void score(int scoringIndex);
 

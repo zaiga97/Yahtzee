@@ -20,8 +20,8 @@ public interface ScoringTable {
     ScoreCategory getScoringCategory(int index);
 
     /**
-     * @param index
-     * @param dicesValues
+     * @param index category index where to score
+     * @param dicesValues values of the dices
      */
     void score(int index, int[] dicesValues);
 

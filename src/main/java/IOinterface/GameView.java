@@ -33,7 +33,7 @@ public interface GameView {
     /**
      * Draw the game status. This should give the player all the information he needs to play the game.
      * In particular both the boards and the dices needs to be displayed.
-     * @param gs
+     * @param gs The current game status.
      */
     void drawGameStatus(GameStatus gs);
 

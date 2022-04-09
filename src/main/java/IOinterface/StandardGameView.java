@@ -113,9 +113,7 @@ public class StandardGameView implements GameView {
     @Override
     public void drawHighScores(Map<String, List<Integer>> scoreHistory) {
         System.out.println("#####     HIGH SCORES    #####\n");
-        scoreHistory.forEach((s, integers) -> {
-            System.out.println(s + ": " + integers.stream().max(Integer::compareTo).get());
-        });
+        scoreHistory.forEach((s, integers) -> System.out.println(s + ": " + integers.stream().max(Integer::compareTo).get()));
         System.out.println("\n##############################\n");
     }
 

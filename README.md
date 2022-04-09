@@ -28,7 +28,6 @@ To do list:
 - [x] Make documentation for all the project.
 - [ ] Refactor the standard game view to make it more usable.
 - [ ] Refactor the menu out of the interface.
-- [ ] Refactor the scoring table/ category.
-- [ ] Add high scores.
+- [x] Add high scores.
 - [ ] Add local multiplayer.
 - [ ] Add a graphic interface.
